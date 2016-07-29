@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/KingPixil/newsnip/issues"
   },
-  "homepage": "https://github.com/KingPixil/newsnip#readme"
+  "homepage": "https://github.com/KingPixil/newsnip#readme",
+  "dependencies": {
+    "sqlite3": "^3.1.4"
+  }
 }
