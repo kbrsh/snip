@@ -1,0 +1,20 @@
+{
+  "name": "snip",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "dead simple URL shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo No Test Yet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingPixil/newsnip.git"
+  },
+  "author": "Kabir Shah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingPixil/newsnip/issues"
+  },
+  "homepage": "https://github.com/KingPixil/newsnip#readme"
+}
