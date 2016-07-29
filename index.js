@@ -1,8 +1,13 @@
-var server = require('diet');
-var app = server();
+var express = require("express");
+var app = express();
+var bodyParser = require('body-parser');
 
-app.listen('http://0.0.0.0:80');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/assets'));
 
-app.get('/', function($) {
-   $.end('Hello World!');
+app.get('/', function(req, res) {
+   res.sendFile(__dirname + '/views/index.html') ;
+});
+app.listen(process.env.PORT, function (req, res) {
+    console.log("Listening");
 });
