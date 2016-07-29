@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/KingPixil/newsnip#readme",
   "dependencies": {
+    "sequelize": "^3.23.6",
     "sqlite3": "^3.1.4"
   }
 }
