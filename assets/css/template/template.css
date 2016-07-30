@@ -2,3 +2,21 @@ input {
     width: 31rem !important;
     text-align: center;
 }
+
+a {
+    color: #0197F6;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: .8;
+    color: #01f7F6;
+}
+
+footer {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    font-family: Monospace;
+    font-size: 2.5rem;
+}
