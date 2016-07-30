@@ -14,13 +14,35 @@ p {
     font-size: 2rem;
 }
 
+
 input[type=text] {
     background: transparent;
     border-radius: 0px;
     border: 2px solid #0197F6;
     color: #f5f5f5;
+    font-family: 'Quicksand';
+    font-weight: bold;
 }
 
 ::-webkit-input-placeholder {
    color: #f5f5f5;
+}
+
+input[type=text]:focus {
+    border-radius: 0px;
+    border: 2px solid #0197F6;
+    color: #f5f5f5;
+}
+
+input[type=submit] {
+    width: 100%;
+    margin-left: 0;
+    font-family: 'Quicksand';
+    font-weight: bold;
+    background: #0197F6;
+    text-align: center;
+    background: -webkit-linear-gradient(left top, #4326D7, #0197F6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #4326D7, #0197F6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #4326D7, #0197F6); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #4326D7, #0197F6); /* Standard syntax */
 }
