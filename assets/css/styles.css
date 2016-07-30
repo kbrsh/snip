@@ -37,6 +37,7 @@ input[type=text]:focus {
 input[type=submit] {
     width: 100%;
     margin-left: 0;
+    border-radius: 0px;
     font-family: 'Quicksand';
     font-weight: bold;
     background: #0197F6;
