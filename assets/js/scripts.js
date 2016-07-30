@@ -4,9 +4,11 @@ function check(){
     var trimmedTextAreaValue=inputValue.trim(); 
     if(trimmedTextAreaValue!=="") {
         if (inputValue.split("").slice(0, 6).join("") !== "http://" || inputValue.split("").slice(0, 7).join("") !== "https://") {
-            inputValue = "http://" + inputValue;
+            inputValue.value = "http://" + inputValue.value;
+            console.log(inputValue);
+        } else {
+            document.forms["form"].submit();
         }
-        document.forms["form"].submit();
     } else {
         alert('You need to enter a valid URL!');
         return false;

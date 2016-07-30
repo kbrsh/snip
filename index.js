@@ -10,6 +10,10 @@ app.get('/', function(req, res) {
    res.sendFile(__dirname + '/views/index.html') ;
 });
 
+app.post('/new', function(req, res) {
+    res.end(req.body.url);
+});
+
 app.listen(process.env.PORT, function (req, res) {
     util.log("Listening", "green");
 });
