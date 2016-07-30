@@ -14,20 +14,20 @@ app.get('/', function(req, res) {
 
 app.post('/new', function(req, res) {
     var url = req.body.url;
+    res.set('Content-Type', 'text/html');
     storage.addURL(url);
+    
+    
 });
 
 app.get('/:id', function(req, res) {
    var id = req.params.id;
-   res.set('Content-Type', 'text/html');
    storage.getURL(id).then(function(url) {
       if(!url) {
           res.end('404 Not Found');
           util.log("[SNIP] 404 Not Found", "yellow");
       } else {
-          var html = view.render(url.id);
-          res.send(html);
-          util.log("User visited /" + id, "green");
+          util.log("[SNIP] User redirected from /" + id, "green");
       }
    });
 });
