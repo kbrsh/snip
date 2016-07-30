@@ -18,12 +18,9 @@ input[type=text] {
     background: transparent;
     border-radius: 0px;
     border: 2px solid #0197F6;
+    color: #f5f5f5;
 }
 
 ::-webkit-input-placeholder {
    color: #f5f5f5;
-}
-
-input[type=text]:focus {
-    background: #0197F6;
 }
