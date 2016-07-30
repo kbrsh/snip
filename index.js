@@ -11,7 +11,9 @@ app.get('/', function(req, res) {
 });
 
 app.post('/new', function(req, res) {
-    res.end(req.body.url);
+    var url = req.body.url;
+    
+    
 });
 
 app.listen(process.env.PORT, function (req, res) {
