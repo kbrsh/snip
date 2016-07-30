@@ -2,3 +2,20 @@ body {
     background-color: #02182b;
     color: #0197F6;
 }
+
+h1 {
+    font-family: 'Gilroy', 'Impact', sans-serif;
+    font-size: 8rem;
+}
+
+p {
+    font-family: 'Quicksand';
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+input[type=text] {
+    background: transparent;
+    border-radius: 0px;
+    border: 2px solid #0197F6;
+}
