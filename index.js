@@ -37,6 +37,20 @@ app.get('/:id', function(req, res) {
    });
 });
 
+app.get('/:id/api', function(req, res) {
+   var id = req.params.id;
+   storage.getURL(id).then(function(url) {
+      if(!url) {
+          res.end('404 Not Found');
+          util.log("[SNIP] 404 Not Found", "yellow");
+      } else {
+          res.send("{snippedURL:'" + url.id + "',longURL:'" + url.url + "'}");
+          util.log("[SNIP] Sending API stats for /" + id, "green");
+      }
+   });
+});
+
+
 app.listen(process.env.PORT, function (req, res) {
     util.log("[SNIP] Listening", "green");
 });
