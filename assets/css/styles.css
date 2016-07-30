@@ -1,6 +1,7 @@
 body {
     background-color: #02182b;
     color: #0197F6;
+    transition: all 0.5s ease;
 }
 
 h1 {

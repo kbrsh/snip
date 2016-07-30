@@ -13,7 +13,8 @@ function check(){
         document.getElementById('url').value = addhttp(inputValue);
         document.forms["form"].submit();
     } else {
-        alert('You need to enter a valid URL!');
+        document.body.style.backgroundColor = "#D7263D"
+        document.body.style.color = "#F5F5F5"
         return false;
     }
 } 
