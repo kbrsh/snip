@@ -13,8 +13,7 @@ app.get('/', function(req, res) {
 
 app.post('/new', function(req, res) {
     var url = req.body.url;
-    
-    
+    storage.addURL(url);
 });
 
 app.listen(process.env.PORT, function (req, res) {
