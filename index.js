@@ -15,9 +15,13 @@ app.get('/', function(req, res) {
 app.post('/new', function(req, res) {
     var url = req.body.url;
     res.set('Content-Type', 'text/html');
-    storage.addURL(url);
     
+    var showNew = url => {
+        res.send(view.render(req.hostname + "/" + url.id));
+    };
     
+    storage.addURL(url).then(showNew);
+    util.log("[SNIP] User posted to /new", "green");
 });
 
 app.get('/:id', function(req, res) {
@@ -27,6 +31,7 @@ app.get('/:id', function(req, res) {
           res.end('404 Not Found');
           util.log("[SNIP] 404 Not Found", "yellow");
       } else {
+          res.redirect("/" + url.id);
           util.log("[SNIP] User redirected from /" + id, "green");
       }
    });
