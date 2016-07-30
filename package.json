@@ -5,8 +5,10 @@
   "description": "dead simple URL shortener",
   "main": "index.js",
   "scripts": {
-    "test": "echo No Test Yet"
+    "test": "echo No Test Yet",
+    "start": "node index.js"
   },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KingPixil/newsnip.git"
