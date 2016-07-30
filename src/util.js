@@ -6,3 +6,5 @@ var log = function(log, color) {
         console.log(hexu.grey(log));
     }
 }
+
+module.exports.log = log;
