@@ -44,6 +44,7 @@ app.get('/:id/api', function(req, res) {
           res.end('404 Not Found');
           util.log("[SNIP] 404 Not Found", "yellow");
       } else {
+          res.set("Content-Type", "application/json");
           res.send("{snippedURL:'" + url.id + "',longURL:'" + url.url + "'}");
           util.log("[SNIP] Sending API stats for /" + id, "green");
       }
