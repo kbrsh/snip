@@ -54,6 +54,6 @@ app.get('/:id/api', function(req, res) {
 });
 
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP, function (req, res) {
+app.listen(process.env.PORT || 3000, function (req, res) {
     util.log("[SNIP] Listening", "green");
 });
