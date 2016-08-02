@@ -54,7 +54,17 @@ app.get('/:id/api', function(req, res) {
 });
 
 app.get("/shorten/url", function(req, res) {
+    var apiLongUrl = req.query.url;
+    res.header('Content-Type', 'application/json');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     
+    var sendApiResponse = url => {
+        res.send(JSON.stringify({snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+    };
+    
+    storage.addURL(apiLongUrl).then(sendApiResponse);
+    util.log("[SNIP] User posted to /new", "green");
 });
 
 
