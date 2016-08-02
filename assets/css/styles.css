@@ -48,3 +48,28 @@ input[type=submit] {
     background: -moz-linear-gradient(bottom right, #4326D7, #0197F6); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom right, #4326D7, #0197F6); /* Standard syntax */
 }
+
+#footer {
+  position: fixed;
+  color: #0197F6;
+  z-index: 100;
+  font-family: 'Quicksand';
+  font-weight: bold;
+}
+
+  #footer {
+    right: 5%;
+    bottom: 5%;
+  }
+
+#footer a {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+
+@media (max-width: 600px) {
+  #footer {
+      display: none;
+  }
+}
