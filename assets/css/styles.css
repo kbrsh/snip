@@ -73,3 +73,16 @@ input[type=submit] {
       display: none;
   }
 }
+
+/* logo */
+#logo {
+    top: 5%;
+    left: 5%;
+    position: fixed;
+}
+
+#logo img {
+    height: 70px;
+    width: 70px;
+    border-radius: 40%;
+}
