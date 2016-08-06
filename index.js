@@ -31,6 +31,7 @@ app.get('/:id', function(req, res) {
           res.end('404 Not Found');
           util.log("[SNIP] 404 Not Found", "yellow");
       } else {
+          
           res.redirect(url.url);
           util.log("[SNIP] User redirected from /" + id, "green");
       }
@@ -47,7 +48,7 @@ app.get('/:id/api', function(req, res) {
           res.header('Content-Type', 'application/json');
           res.header("Access-Control-Allow-Origin", "*");
           res.header("Access-Control-Allow-Headers", "X-Requested-With");
-          res.send(JSON.stringify({id: url.id, stats: url.visits, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+          res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
           util.log("[SNIP] Sending API stats for /" + id, "green");
       }
    });
@@ -60,7 +61,7 @@ app.get("/shorten/url", function(req, res) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     
     var sendApiResponse = url => {
-        res.send(JSON.stringify({id: url.id, stats: url.visits, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+        res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
     };
     
     storage.addURL(apiLongUrl).then(sendApiResponse);
