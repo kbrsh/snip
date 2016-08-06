@@ -29,7 +29,7 @@ app.get('/:id', function(req, res) {
    storage.getURL(id).then(function(url) {
       if(!url) {
           res.end('404 Not Found');
-          util.log("[SNIP] 404 Not Found", "yellow");
+          //util.log("[SNIP] 404 Not Found", "yellow");
       } else {
           url.visits = url.visits + 1
           url.save()
