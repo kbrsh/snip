@@ -60,7 +60,7 @@ app.get("/shorten/url", function(req, res) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     
     var sendApiResponse = url => {
-        res.send(JSON.stringify({snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+        res.send(JSON.stringify({id: url.id, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
     };
     
     storage.addURL(apiLongUrl).then(sendApiResponse);
