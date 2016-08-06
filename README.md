@@ -18,7 +18,11 @@ Snip has an api that you can use to access the details of a URL in your applicat
 
 ```js
 {
-    snippedURL: 'Qra7ecH',
+    id: "Qra7ecH",
+    stats: {
+        visits: 10
+    },
+    snippedURL: 'http://snipit.herokuapp.com/Qra7ecH',
     longURL: 'http://thisisareallylongurlifonlyitcouldbeshorter.com'
 }
 ```
