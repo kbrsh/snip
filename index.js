@@ -64,7 +64,7 @@ app.get("/shorten/url", function(req, res) {
     };
     
     storage.addURL(apiLongUrl).then(sendApiResponse);
-    util.log("[SNIP] User posted to /new", "green");
+    util.log("[SNIP] User submitted URL to be Snipped via API", "green");
 });
 
 
