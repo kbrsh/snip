@@ -16,6 +16,7 @@ var sequelize = new Sequelize('database', 'username', 'password', {
 
 var URL = sequelize.define('URL', {
     id: { type: Sequelize.STRING(7), unique: true, primaryKey: true },
+    visits: Sequelize.INTEGER,
     url: Sequelize.TEXT
 });
 
@@ -38,5 +39,6 @@ module.exports.getURL = function(id) {
 
 module.exports.addURL = (url) => gen().then(id => URL.create({
     id: id,
+    visits: 0,
     url: url
 }));
