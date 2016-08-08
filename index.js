@@ -69,7 +69,7 @@ app.get('/:id/stats', function(req, res) {
    });
 });
 
-app.get("/shorten/url", function(req, res) {
+app.get("/shorten/v1", function(req, res) {
     var apiLongUrl = req.query.url;
     res.header('Content-Type', 'application/json');
     res.header("Access-Control-Allow-Origin", "*");
