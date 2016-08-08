@@ -12,3 +12,4 @@ var renderStats = function(visits) {
 }
 
 module.exports.render = render;
+module.exports.renderStats = renderStats;
