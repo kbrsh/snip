@@ -55,6 +55,20 @@ app.get('/:id/api', function(req, res) {
    });
 });
 
+app.get('/:id/api', function(req, res) {
+   var id = req.params.id;
+   storage.getURL(id).then(function(url) {
+      if(!url) {
+          res.end('404 Not Found');
+          util.log("[SNIP] 404 Not Found", "yellow");
+      } else {
+          res.header('Content-Type', 'text/html');
+          res.send();
+          util.log("[SNIP] Sending API stats for /" + id, "green");
+      }
+   });
+});
+
 app.get("/shorten/url", function(req, res) {
     var apiLongUrl = req.query.url;
     res.header('Content-Type', 'application/json');
