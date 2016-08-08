@@ -55,7 +55,7 @@ app.get('/:id/api', function(req, res) {
    });
 });
 
-app.get('/:id/api', function(req, res) {
+app.get('/:id/stats', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
