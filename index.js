@@ -64,7 +64,7 @@ app.get('/:id/stats', function(req, res) {
       } else {
           res.header('Content-Type', 'text/html');
           res.send();
-          util.log("[SNIP] Sending API stats for /" + id, "green");
+          util.log("[SNIP] Sending web stats for /" + id, "green");
       }
    });
 });
