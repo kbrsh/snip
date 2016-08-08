@@ -4,21 +4,16 @@
 	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Snip | New</title>
+	<title>Snip | Stats</title>
 	<link href="./fonts/fonts.css" rel="stylesheet" type="text/css" />
     <link href="./css/lib/wing.min.css" rel="stylesheet" type="text/css" />
     <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-    <link href="./css/template/template.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
 	<div class="centered text-center">
-	    <p>Snipped URL:</p>
-	    <input type="text" onClick="this.setSelectionRange(0, this.value.length)" value="{{url}}" readonly/>
+	    <h1>{{visits}}</h1>
+	    <p>people have visted your url</p>
 	</div>
-	<footer>
-		<a href="http://{{url}}/api">/api</a>
-		
-	</footer>
 </body>
 </html>
