@@ -63,7 +63,7 @@ app.get('/:id/stats', function(req, res) {
         //   util.log("[SNIP] 404 Not Found", "yellow");
       } else {
           res.header('Content-Type', 'text/html');
-          res.send();
+          res.send(view.renderStats(url.visits));
           util.log("[SNIP] Sending web stats for /" + id, "green");
       }
    });
