@@ -8,7 +8,6 @@
     "test": "echo No Test Yet",
     "start": "node index.js"
   },
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KingPixil/newsnip.git"
@@ -24,6 +23,7 @@
     "express": "^4.14.0",
     "hexu": "^1.0.0",
     "sequelize": "^3.23.6",
+    "socket.io": "^1.4.8",
     "sqlite3": "^3.1.4"
   },
   "devDependencies": {

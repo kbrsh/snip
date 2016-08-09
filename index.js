@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var util = require('./src/util.js');
 var storage = require('./models/storage.js');
 var view = require('./src/view.js');
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/assets'));
@@ -87,3 +89,4 @@ app.get("/shorten/v1", function(req, res) {
 app.listen(process.env.PORT || 3000, function (req, res) {
     util.log("[SNIP] Listening", "green");
 });
+
