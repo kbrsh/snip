@@ -4,11 +4,10 @@ var bodyParser = require('body-parser');
 var util = require('./src/util.js');
 var storage = require('./models/storage.js');
 var view = require('./src/view.js');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/assets'));
+
 
 app.get('/', function(req, res) {
    res.sendFile(__dirname + '/views/index.html') ;
