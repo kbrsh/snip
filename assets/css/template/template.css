@@ -1,3 +1,7 @@
+#templateHeader {
+    font-size: 3rem;
+}
+
 input {
     width: 31rem !important;
     text-align: center;
