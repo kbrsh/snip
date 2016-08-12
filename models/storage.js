@@ -24,7 +24,11 @@ sequelize.sync();
 
 
 function randomStr() {
-    return Math.round((Math.pow(36, 7 + 1) - Math.random() * Math.pow(36, 7))).toString(36).slice(1);
+    var tempStr = Math.random().toString(36).slice(-7);
+    if(tempStr.length !== 7) {
+        tempStr = Math.random().toString(36).slice(-7);
+    }
+    return tempStr;
 }
 
 function gen() {
