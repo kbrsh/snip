@@ -49,6 +49,10 @@ input[type=submit] {
     background: linear-gradient(45deg, #4326D7 10%, #0197F6 90%); /* Standard syntax */
 }
 
+input[type=submit]:hover {
+    
+}
+
 #footer {
   position: fixed;
   color: #0197F6;
