@@ -49,6 +49,15 @@ input[type=submit] {
     background: linear-gradient(to bottom right, #4326D7, #0197F6); /* Standard syntax */
 }
 
+input[type=submit]:hover {
+    border-width: 3px;
+    border-style: solid;
+    background: transparent;
+    border-image: linear-gradient(to bottom right, #4326D7, #0197F6);;
+    border-image-slice: 1;
+    opacity: 1;
+}
+
 #footer {
   position: fixed;
   color: #0197F6;
