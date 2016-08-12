@@ -51,7 +51,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    animation: animateButtonGradient 1s ease infinite;
+    animation: animateButtonGradient 1s ease;
 }
 
 #footer {
