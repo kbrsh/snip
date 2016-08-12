@@ -32,8 +32,7 @@ app.get('/:id', function(req, res) {
           res.status(404).end('404 Not Found');
           //util.log("[SNIP] 404 Not Found", "yellow");
       } else {
-          url.visits = url.visits + 1
-          url.save()
+          url.increment('visits', {by: 1});
           res.redirect(url.url);
           util.log("[SNIP] User redirected from /" + id, "green");
       }
