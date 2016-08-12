@@ -49,8 +49,6 @@ input[type=submit] {
     background: linear-gradient(45deg, #4326D7, #0197F6); /* Standard syntax */
 }
 
-
-
 #footer {
   position: fixed;
   color: #0197F6;
