@@ -47,6 +47,7 @@ input[type=submit] {
     background: -o-linear-gradient(45deg, #4326D7 10%, #0197F6 90%); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(45deg, #4326D7 10%, #0197F6 90%); /* For Firefox 3.6 to 15 */
     background: linear-gradient(45deg, #4326D7 10%, #0197F6 90%); /* Standard syntax */
+    background-size: 200% 100%;
 }
 
 input[type=submit]:hover {
