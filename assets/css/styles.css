@@ -67,6 +67,12 @@ input[type=submit]:hover {
     right: 5%;
     bottom: 5%;
   }
+  
+#social {
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+  }
 
 #footer a {
     text-decoration: none;
