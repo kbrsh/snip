@@ -33,7 +33,7 @@ app.get('/:id', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
-          res.status(404).end('404 Not Found');
+          showNotFound(res);
       } else {
           url.increment('visits', {by: 1});
           res.redirect(url.url);
