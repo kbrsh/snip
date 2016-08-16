@@ -43,7 +43,6 @@ app.get('/:id/api', function(req, res) {
    storage.getURL(id).then(function(url) {
       if(!url) {
           res.status(404).end('404 Not Found');
-        //   util.log("[SNIP] 404 Not Found", "yellow");
       } else {
           res.header('Content-Type', 'application/json');
           res.header("Access-Control-Allow-Origin", "*");
