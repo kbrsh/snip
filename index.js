@@ -46,7 +46,7 @@ app.get('/:id/api', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
-          res.status(404).end('404 Not Found');
+          showNotFound(res);
       } else {
           res.header('Content-Type', 'application/json');
           res.header("Access-Control-Allow-Origin", "*");
