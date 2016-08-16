@@ -30,7 +30,6 @@ app.get('/:id', function(req, res) {
    storage.getURL(id).then(function(url) {
       if(!url) {
           res.status(404).end('404 Not Found');
-          //util.log("[SNIP] 404 Not Found", "yellow");
       } else {
           url.increment('visits', {by: 1});
           res.redirect(url.url);
