@@ -47,9 +47,10 @@ app.get('/:id/api', function(req, res) {
    res.header('Content-Type', 'application/json');
    res.header("Access-Control-Allow-Origin", "*");
    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+   
    storage.getURL(id).then(function(url) {
       if(!url) {
-          showNotFound(res);
+          
       } else {
           res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
           util.log("[SNIP] Sending API stats for /" + id, "green");
