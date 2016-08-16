@@ -61,7 +61,7 @@ app.get('/:id/stats', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
-          res.status(404).end('404 Not Found');
+          showNotFound(res);
       } else {
           res.header('Content-Type', 'text/html');
           res.send(view.renderStats(url.visits));
