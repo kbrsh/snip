@@ -44,6 +44,9 @@ app.get('/:id', function(req, res) {
 
 app.get('/:id/api', function(req, res) {
    var id = req.params.id;
+   res.header('Content-Type', 'application/json');
+   res.header("Access-Control-Allow-Origin", "*");
+   res.header("Access-Control-Allow-Headers", "X-Requested-With");
    storage.getURL(id).then(function(url) {
       if(!url) {
           showNotFound(res);
