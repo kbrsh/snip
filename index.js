@@ -8,6 +8,10 @@ var view = require('./src/view.js');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/assets'));
 
+var showNotFound = (res) => {
+    res.status(404).end('404 Not Found');
+}
+
 
 app.get('/', function(req, res) {
    res.sendFile(__dirname + '/views/index.html') ;
