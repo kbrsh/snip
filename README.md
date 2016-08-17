@@ -34,3 +34,5 @@ Find a bug in Snip?
 [Let us know!](https://github.com/KingPixil/snip/issues/new)
 
 ### License
+
+Released under the [MIT License](https://kingpixil.github.io/license) by [Kabir Shah](http://kabir.ml)
