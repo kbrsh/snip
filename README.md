@@ -26,3 +26,9 @@ Snip has an api that you can use to access the details of a URL in your applicat
     longURL: 'http://thisisareallylongurlifonlyitcouldbeshorter.com'
 }
 ```
+
+### Bugs/Issues
+
+Find a bug in Snip?
+
+[Let us know!](https://github.com/KingPixil/snip/issues/new)
