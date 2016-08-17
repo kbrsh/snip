@@ -51,7 +51,7 @@ app.get('/:id/api', function(req, res) {
    storage.getURL(id).then(function(url) {
       if(!url) {
           res.send(JSON.stringify({error: "ENOTFOUND: The requested url is not valid, or is not found"}));
-          util.log("[SNIP]");
+          util.log("[SNIP] ERR: Sending ENOTFOUND error", "yellow");
       } else {
           res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
           util.log("[SNIP] Sending API stats for /" + id, "green");
