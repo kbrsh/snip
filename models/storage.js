@@ -46,3 +46,7 @@ module.exports.addURL = (url) => gen().then(id => URL.create({
     visits: 0,
     url: url
 }));
+
+module.exports.getAllLinks = function() {
+    
+}
