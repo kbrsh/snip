@@ -53,10 +53,9 @@ module.exports.getAllLinks = function() {
        for(var i = 0; i < links.length; i++) {
            var tempAPI = {};
            
-           tempAPI.id = links[i].dataValues.id
-           apiLinks.push(tempAPI)
+           tempAPI.id = links[i].dataValues.id;
+           apiLinks.push(tempAPI);
        }
     });
     return apiLinks;
 }
-
