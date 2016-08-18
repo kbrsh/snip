@@ -14,7 +14,9 @@ Head on the website, enter a URL, and click submit (or enter)
 
 ### API Usage
 
-Snip has an api that you can use to access the details of a URL in your application! Simply make a call to your url and `/api`. You will get a JSON output, in the following format:
+Snip has an API!
+
+- To get the details of a URL, make a GET request to the url + `/api`, example output:
 
 ```js
 {
@@ -26,6 +28,8 @@ Snip has an api that you can use to access the details of a URL in your applicat
     longURL: 'http://thisisareallylongurlifonlyitcouldbeshorter.com'
 }
 ```
+
+To get the
 
 ### Bugs/Issues
 
