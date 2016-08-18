@@ -90,7 +90,7 @@ app.get("/api/links", function(req, res) {
     res.header('Content-Type', 'application/json');
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    storage.getAllLinks().then(function(links) {
+    storage.getAllLinks(req).then(function(links) {
       res.end(links);  
     });
 });
