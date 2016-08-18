@@ -14,7 +14,7 @@ Head on the website, enter a URL, and click submit (or enter)
 
 ### API Usage
 
-Snip has an API!
+Snip has a dead-simple, easy to use API.
 
 - To get the details of a URL, make a GET request to the url + `/api`, example output:
 
