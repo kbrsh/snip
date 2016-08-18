@@ -31,6 +31,12 @@ Snip has an API!
 
 - To get an array of ALL recent URL's, make a GET request to `/api/links`, example output:
 
+```js
+{
+    [{"id":"erbpgb9","stats":{"visits":1},"snippedURL":"http://snipit.herokuapp.com/erbpgb9","longURL":"http://kabir.ml"},{"id":"72satt9","stats":{"visits":2295},"snippedURL":"http://snipit.herokuapp.com/72satt9","longURL":"http://usewing.ml"}]
+}
+```
+
 ### Bugs/Issues
 
 Find a bug in Snip?
