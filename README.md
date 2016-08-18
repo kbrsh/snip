@@ -29,7 +29,7 @@ Snip has an API!
 }
 ```
 
-
+- To get an array of ALL recent URL's, make a GET request to `/api/links`, example output:
 
 ### Bugs/Issues
 
