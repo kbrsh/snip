@@ -86,6 +86,10 @@ app.get("/shorten/v1", function(req, res) {
     util.log("[SNIP] User submitted URL to be Snipped via API", "green");
 });
 
+app.get("/api/links", function(req, res) {
+    
+});
+
 
 app.listen(process.env.PORT || 3000, function (req, res) {
     util.log("[SNIP] Listening", "green");
