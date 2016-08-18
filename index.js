@@ -87,7 +87,9 @@ app.get("/shorten/v1", function(req, res) {
 });
 
 app.get("/api/links", function(req, res) {
-    console.log(storage.getAllLinks());
+    storage.getAllLinks().then(function(links) {
+      res.end(links);  
+    });
 });
 
 
