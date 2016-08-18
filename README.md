@@ -29,7 +29,7 @@ Snip has an API!
 }
 ```
 
-To get the
+
 
 ### Bugs/Issues
 
