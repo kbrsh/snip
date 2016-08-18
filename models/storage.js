@@ -47,13 +47,13 @@ module.exports.addURL = (url) => gen().then(id => URL.create({
     url: url
 }));
 
-module.exports.getAllLinks = function() {
+module.exports.getAllLinks = function(req) {
     return allLinksToArray().then(function(links) {
         return JSON.stringify(links);
     });
 }
 
-var allLinksToArray = function() {
+var allLinksToArray = function(req) {
     var allLinksArray = [];
     return URL.findAll().then(links => {
        for(var i = 0; i < links.length; i++) {
