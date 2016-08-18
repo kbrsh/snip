@@ -60,7 +60,7 @@ var allLinksToArray = function(req) {
            var tempAPI = {};
            
            tempAPI.id = links[i].dataValues.id;
-           tempAPI.stats = {visits: links[i].dataValues.visits}
+           tempAPI.stats = {visits: links[i].dataValues.visits};
            allLinksArray.push(tempAPI);
        }
        return allLinksArray;
