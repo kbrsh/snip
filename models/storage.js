@@ -61,6 +61,7 @@ var allLinksToArray = function(req) {
            
            tempAPI.id = links[i].dataValues.id;
            tempAPI.stats = {visits: links[i].dataValues.visits};
+           tempAPI.snippedURL = req.protocol + '://' + req.hostname + "/" + links[i].dataValues.id;
            allLinksArray.push(tempAPI);
        }
        return allLinksArray;
