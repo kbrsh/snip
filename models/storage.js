@@ -22,7 +22,6 @@ var URL = sequelize.define('URL', {
 
 sequelize.sync();
 
-
 function randomStr() {
     var tempStr = Math.random().toString(36).slice(-7);
     if(tempStr.length !== 7) {
@@ -30,6 +29,8 @@ function randomStr() {
     }
     return tempStr;
 }
+
+/* generate UNIQUE id */
 
 function gen() {
     var id = randomStr();
