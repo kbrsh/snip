@@ -55,7 +55,9 @@ module.exports.getAllLinks = function(req) {
 }
 
 module.exports.seedDatabase = function() {
-  
+  for(var i = 0; i < data.data.length; i++) {
+    
+  }
 }
 
 var allLinksToArray = function(req) {
