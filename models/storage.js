@@ -56,7 +56,11 @@ module.exports.getAllLinks = function(req) {
 
 module.exports.seedDatabase = function() {
   for(var i = 0; i < data.data.length; i++) {
-    
+    URL.create({
+      id: data.data[i].id,
+      visits: data.data[i].stats.visits,
+      url: data.data[i].longURL
+    });
   }
 }
 
