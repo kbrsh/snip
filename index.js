@@ -98,7 +98,6 @@ app.get("/api/links", function(req, res) {
 
 
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0", function (req, res) {
-  /* seed database with original data */
-  storage.seedDatabase();
+    storage.seedDatabase();
     util.log("[SNIP] Listening", "green");
 });
