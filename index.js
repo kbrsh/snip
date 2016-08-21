@@ -12,8 +12,6 @@ var showNotFound = (res) => {
     res.status(404).end('404 Not Found');
 }
 
-/* seed database with original data */
-storage.seedDatabase();
 
 
 app.get('/', function(req, res) {
@@ -100,5 +98,7 @@ app.get("/api/links", function(req, res) {
 
 
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0", function (req, res) {
+  /* seed database with original data */
+  storage.seedDatabase();
     util.log("[SNIP] Listening", "green");
 });
