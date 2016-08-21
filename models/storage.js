@@ -57,6 +57,7 @@ module.exports.getAllLinks = function(req) {
 }
 
 module.exports.seedDatabase = function() {
+  fs.unlink(__dirname + "/../database.sqlite");
   data.getData(function(data) {
     for(var i = 0; i < data.length; i++) {
       URL.create({
