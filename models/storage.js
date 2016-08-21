@@ -56,11 +56,13 @@ module.exports.getAllLinks = function(req) {
 }
 
 module.exports.seedDatabase = function() {
-  for(var i = 0; i < data.data.length; i++) {
+  console.log(data.getData())
+  var databaseData = data.getData();
+  for(var i = 0; i < databaseData.length; i++) {
     URL.create({
-      id: data.data[i].id,
-      visits: data.data[i].stats.visits,
-      url: data.data[i].longURL
+      id: databaseData[i].id,
+      visits: databaseData[i].stats.visits,
+      url: databaseData[i].longURL
     });
   }
 }
