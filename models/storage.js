@@ -1,5 +1,6 @@
 var Sequelize = require('sequelize');
 var data = require('../data/data.js');
+var fs = require('fs');
 var sequelize = new Sequelize('database', 'username', 'password', {
   dialect: 'sqlite',
 
