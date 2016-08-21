@@ -33,7 +33,7 @@
 	    <p>dead-simple <br/>URL shortener</p>
 	    <form action="/new" method="POST" name="form" onsubmit="return check()">
 	        <input name="url" placeholder="URL" id="url" type="text"></input>
-	        <input type="submit" value="SNIP IT"/>
+	        <input type="submit" value="SNIP IT" onclick="ga('send', 'event', 'Google Link', 'Action label', 'Action Value');"/>
 	    </form>
 	</div>
 	<div id="social">
