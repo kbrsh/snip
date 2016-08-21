@@ -6,14 +6,10 @@ function addhttp(url) {
 }
 
 function ValidURL(str) {
-  var pattern = new RegExp('^(https?:\/\/)?'+ // protocol
-    '((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|'+ // domain name
-    '((\d{1,3}\.){3}\d{1,3}))'+ // OR ip (v4) address
-    '(\:\d+)?(\/[-a-z\d%_.~+]*)*'+ // port and path
-    '(\?[;&a-z\d%_.~+=-]*)?'+ // query string
-    '(\#[-a-z\d_]*)?$','i'); // fragment locater
+  var pattern = new RegExp("(http|ftp|https)://[\w-]+(\.[\w-]*)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?");
   if(!pattern.test(str)) {
-    alert("Please enter a valid URL.");
+    document.body.style.backgroundColor = "#D7263D"
+    document.body.style.color = "#F5F5F5"
     return false;
   } else {
     return true;
@@ -21,15 +17,14 @@ function ValidURL(str) {
 }
 
 function check(){
-    String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
     var inputValue=document.getElementById('url').value;
-    var trimmedTextAreaValue=inputValue.trim();
-    if(trimmedTextAreaValue!=="" || ValidURL(trimmedTextAreaValue) === true) {
+
+    if(ValidURL(inputValue)) {
         document.getElementById('url').value = addhttp(inputValue);
         document.forms["form"].submit();
     } else {
-        document.body.style.backgroundColor = "#D7263D"
-        document.body.style.color = "#F5F5F5"
-        return false;
+      document.body.style.backgroundColor = "#D7263D"
+      document.body.style.color = "#F5F5F5"
+      return false;
     }
 }
