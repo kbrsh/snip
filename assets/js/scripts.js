@@ -24,7 +24,7 @@ function check(){
     String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
     var inputValue=document.getElementById('url').value;
     var trimmedTextAreaValue=inputValue.trim();
-    if(trimmedTextAreaValue!=="" || ) {
+    if(trimmedTextAreaValue!=="" || ValidURL(trimmedTextAreaValue) === true) {
         document.getElementById('url').value = addhttp(inputValue);
         document.forms["form"].submit();
     } else {
