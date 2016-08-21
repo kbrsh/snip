@@ -8,7 +8,7 @@ var options = {
   path: '/api/links'
 };
 
-module.exports.getData = function() {
+module.exports.getData = function(cb) {
   var data;
   http.get(options, function(res) {
     res.on("data", function(chunk) {
@@ -16,10 +16,13 @@ module.exports.getData = function() {
     }).on('end', function() {
       body = Buffer.concat(body).toString();
       data = JSON.parse(body);
-      console.log(data);
+      if(data) {
+        cb(data);
+      }
     });
   }).on('error', function(e) {
     util.log("Got error: " + e.message, "red");
   });
-  return data;
 }
+
+console.log(module.exports.getData());
