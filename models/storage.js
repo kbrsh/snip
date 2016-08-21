@@ -56,15 +56,15 @@ module.exports.getAllLinks = function(req) {
 }
 
 module.exports.seedDatabase = function() {
-  console.log(data.getData())
-  var databaseData = data.getData();
-  for(var i = 0; i < databaseData.length; i++) {
-    URL.create({
-      id: databaseData[i].id,
-      visits: databaseData[i].stats.visits,
-      url: databaseData[i].longURL
-    });
-  }
+  data.getData(function(data) {
+    for(var i = 0; i < data.length; i++) {
+      URL.create({
+        id: data[i].id,
+        visits: data[i].stats.visits,
+        url: data[i].longURL
+      });
+    }
+  });
 }
 
 var allLinksToArray = function(req) {

@@ -24,5 +24,3 @@ module.exports.getData = function(cb) {
     util.log("Got error: " + e.message, "red");
   });
 }
-
-console.log(module.exports.getData());
