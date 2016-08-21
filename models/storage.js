@@ -7,7 +7,7 @@ var sequelize = new Sequelize('database', 'username', 'password', {
     min: 0,
     idle: 10000
   },
-  
+
   logging: false,
 
   storage: 'database.sqlite'
@@ -54,12 +54,16 @@ module.exports.getAllLinks = function(req) {
     });
 }
 
+module.exports.seedDatabase = function() {
+  
+}
+
 var allLinksToArray = function(req) {
     var allLinksArray = [];
     return URL.findAll().then(links => {
        for(var i = 0; i < links.length; i++) {
            var tempAPI = {};
-           
+
            tempAPI.id = links[i].dataValues.id;
            tempAPI.stats = {visits: links[i].dataValues.visits};
            tempAPI.snippedURL = req.protocol + '://' + req.hostname + "/" + links[i].dataValues.id;
@@ -68,5 +72,5 @@ var allLinksToArray = function(req) {
        }
        return allLinksArray;
     });
-    
+
 }
