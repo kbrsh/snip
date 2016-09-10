@@ -42,7 +42,7 @@ app.get('/:id', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
-          showNotFound(res);
+          util.showNotFound(res);
       } else {
           url.increment('visits', {by: 1});
           res.redirect(url.url);
@@ -72,7 +72,7 @@ app.get('/:id/stats', function(req, res) {
    var id = req.params.id;
    storage.getURL(id).then(function(url) {
       if(!url) {
-          showNotFound(res);
+          util.showNotFound(res);
       } else {
           res.header('Content-Type', 'text/html');
           res.send(statsController.renderStats(url.visits));
