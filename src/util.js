@@ -11,5 +11,9 @@ var showNotFound = (res) => {
     res.status(404).end('404 Not Found');
 }
 
+var formatLinkAPI = function(id, visits, shortURL, longURL) {
+
+}
+
 module.exports.showNotFound = showNotFound;
 module.exports.log = log;
