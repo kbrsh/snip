@@ -1,5 +1,7 @@
+// Require Express
 var express = require("express");
 var app = express();
+// Use bodyparser to parse form parameters
 var bodyParser = require('body-parser');
 var util = require('./src/util.js');
 var storage = require('./models/storage.js');
@@ -12,8 +14,6 @@ app.use(express.static(__dirname + '/assets'));
 var showNotFound = (res) => {
     res.status(404).end('404 Not Found');
 }
-
-
 
 app.get('/', function(req, res) {
    res.sendFile(__dirname + '/views/index.html') ;
