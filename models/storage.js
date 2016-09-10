@@ -52,7 +52,7 @@ module.exports.addURL = (url) => gen().then(id => URL.create({
 
 module.exports.getAllLinks = function(req) {
     return allLinksToArray(req).then(function(links) {
-        return JSON.stringify(links);
+        return links;
     });
 }
 
