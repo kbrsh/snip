@@ -96,8 +96,16 @@ app.get('/:id/api', function(req, res) {
           // Log it down
           util.log("[SNIP] ERR: Sending ENOTFOUND error", "yellow");
       } else {
-          // Found, send API data
-          res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
+          // Found
+
+          // Check to make pretty or not
+          if(req.query.pretty === "true") {
+            // Send formatted API Data
+            res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url), null, 3));
+          } else {
+            // Send nonformatted API Data
+            res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
+          }
 
           // Log it down
           util.log("[SNIP] Sending API stats for /" + id, "green");
