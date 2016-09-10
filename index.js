@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var util = require('./src/util.js');
 var storage = require('./models/storage.js');
 var view = require('./src/view.js');
+var newController = require("./controllers/newController.js");
+var statsController = require("./controllers/statsController.js");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/assets'));
