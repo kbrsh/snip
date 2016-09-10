@@ -16,7 +16,7 @@ Head on the website, enter a URL, and click submit (or enter)
 
 Snip has a dead-simple, easy to use API.
 
-- To get the details of a URL, make a GET request to the url + `/api`, example output:
+- To get the details of a URL, make a GET request to the url + `/api`, to make it pretty, make it to the url + `/api?pretty=true`, example output:
 
 ```js
 {
@@ -24,7 +24,7 @@ Snip has a dead-simple, easy to use API.
     stats: {
         visits: 10
     },
-    snippedURL: 'http://snipit.herokuapp.com/Qra7ecH',
+    shortURL: 'http://snipit.herokuapp.com/Qra7ecH',
     longURL: 'http://thisisareallylongurlifonlyitcouldbeshorter.com'
 }
 ```
