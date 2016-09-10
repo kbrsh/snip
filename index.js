@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var util = require('./src/util.js');
 var storage = require('./models/storage.js');
-var view = require('./src/view.js');
 var newController = require("./controllers/newController.js");
 var statsController = require("./controllers/statsController.js");
 
@@ -25,7 +24,7 @@ app.post('/new', function(req, res) {
     res.set('Content-Type', 'text/html');
 
     var showNew = url => {
-        res.send(view.render(req.hostname + "/" + url.id));
+        res.send(newController.render(req.hostname + "/" + url.id));
     };
 
     storage.addURL(url).then(showNew);
