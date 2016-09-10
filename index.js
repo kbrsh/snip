@@ -137,7 +137,11 @@ app.get("/api/links", function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     storage.getAllLinks(req).then(function(links) {
-      res.send(JSON.stringify(links));
+      if(req.query.pretty === "true") {
+        res.send(JSON.stringify(links, null, 3));
+      } else {
+        res.send(JSON.stringify(links));
+      }
     });
 });
 
