@@ -125,7 +125,7 @@ app.get("/shorten/v1", function(req, res) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     var sendApiResponse = url => {
-        res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+        res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
     };
 
     storage.addURL(apiLongUrl).then(sendApiResponse);
