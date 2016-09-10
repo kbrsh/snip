@@ -32,14 +32,22 @@ app.get('/', function(req, res) {
 
 // POST '/new'
 app.post('/new', function(req, res) {
+    // Get url param from form
     var url = req.body.url;
+
+    // Set Content Type to HTML
     res.set('Content-Type', 'text/html');
 
+    // UTIL function for rendering and showing the user
+    // their shortened URL
     var showNew = url => {
         res.send(newController.render(req.hostname + "/" + url.id));
     };
 
+    // Add URL to storage, then show to the user
     storage.addURL(url).then(showNew);
+
+    // Log it down
     util.log("[SNIP] User posted to /new", "green");
 });
 
