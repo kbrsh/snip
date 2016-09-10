@@ -15,17 +15,22 @@ var storage = require('./models/storage.js');
 var newController = require("./controllers/newController.js");
 var statsController = require("./controllers/statsController.js");
 
-// Express config
 
+// Express config
 // Use body parser
 app.use(bodyParser.urlencoded({extended: true}));
 // Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
 
+
+// GET '/'
 app.get('/', function(req, res) {
-   res.sendFile(__dirname + '/views/index.html') ;
+  // Send index.html file
+   res.sendFile(__dirname + '/views/index.html');
 });
 
+
+// POST '/new'
 app.post('/new', function(req, res) {
     var url = req.body.url;
     res.set('Content-Type', 'text/html');
