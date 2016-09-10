@@ -12,7 +12,14 @@ var showNotFound = (res) => {
 }
 
 var formatLinkAPI = function(id, visits, shortURL, longURL) {
-
+  return {
+    id: id,
+    stats {
+      visits: visits
+    },
+    shortURL: shortURL,
+    longURL: longURL
+  }
 }
 
 module.exports.showNotFound = showNotFound;
