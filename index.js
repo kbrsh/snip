@@ -54,38 +54,52 @@ app.post('/new', function(req, res) {
 
 // GET '/:id'
 app.get('/:id', function(req, res) {
-  //  Get ID from URL
+   //  Get ID from URL
    var id = req.params.id;
 
-  //  Get URL from storage
+   //  Get URL from storage
    storage.getURL(id).then(function(url) {
       if(!url) {
-        // If it doesn't exist, send 404
+          // If it doesn't exist, send 404
           util.showNotFound(res);
       } else {
           // If found
           // Update stats
           url.increment('visits', {by: 1});
+
           // Redirect to URL
           res.redirect(url.url);
+
           //  Log it down
           util.log("[SNIP] User redirected from /" + id, "green");
       }
    });
 });
 
+
+// Get '/:id/api'
 app.get('/:id/api', function(req, res) {
+   // get id from URL
    var id = req.params.id;
+
+   // Set CORS, and content type to JSON
    res.header('Content-Type', 'application/json');
    res.header("Access-Control-Allow-Origin", "*");
    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
+   // Get URL from storage
    storage.getURL(id).then(function(url) {
+      //  If doesn't exist, send ENOTFOUND in JSON
       if(!url) {
           res.send(JSON.stringify({error: "ENOTFOUND: The requested url is not valid, or is not found"}));
+
+          // Log it down
           util.log("[SNIP] ERR: Sending ENOTFOUND error", "yellow");
       } else {
+          // Found, send API data
           res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+
+          // Log it down
           util.log("[SNIP] Sending API stats for /" + id, "green");
       }
    });
