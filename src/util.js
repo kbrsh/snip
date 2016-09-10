@@ -7,4 +7,9 @@ var log = function(log, color) {
     }
 }
 
+var showNotFound = (res) => {
+    res.status(404).end('404 Not Found');
+}
+
+module.exports.showNotFound = showNotFound;
 module.exports.log = log;
