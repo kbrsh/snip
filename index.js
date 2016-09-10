@@ -97,7 +97,7 @@ app.get('/:id/api', function(req, res) {
           util.log("[SNIP] ERR: Sending ENOTFOUND error", "yellow");
       } else {
           // Found, send API data
-          res.send(JSON.stringify({id: url.id, stats: { visits: url.visits}, snippedURL: req.protocol + '://' + req.hostname + "/" + url.id, longURL: url.url}));
+          res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
 
           // Log it down
           util.log("[SNIP] Sending API stats for /" + id, "green");
