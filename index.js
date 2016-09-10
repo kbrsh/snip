@@ -1,14 +1,25 @@
 // Require Express
 var express = require("express");
 var app = express();
+
 // Use bodyparser to parse form parameters
 var bodyParser = require('body-parser');
+
+// Get utilities
 var util = require('./src/util.js');
+
+// Get database methods
 var storage = require('./models/storage.js');
+
+// Controllers
 var newController = require("./controllers/newController.js");
 var statsController = require("./controllers/statsController.js");
 
+// Express config
+
+// Use body parser
 app.use(bodyParser.urlencoded({extended: true}));
+// Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
 
 var showNotFound = (res) => {
