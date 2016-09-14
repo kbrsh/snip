@@ -5,32 +5,34 @@ body {
 h1 {
     font-family: 'Montserrat-Bold', sans-serif;
     font-size: 8rem;
+    color: #1098F7;
 }
 
 p {
     font-family: 'Montserrat-Regular';
     font-weight: bolder;
     font-size: 2rem;
+    color: #111111;
 }
 
 
 input[type=text] {
     background: transparent;
     border-radius: 0px;
-    border: 2px solid #0197F6;
-    color: #f5f5f5;
+    border-bottom: 2px solid #8F8F8F;
+    color: #8F8F8F;
     font-family: 'Quicksand';
     font-weight: bold;
 }
 
 ::-webkit-input-placeholder {
-   color: #f5f5f5;
+   color: #8F8F8F;
 }
 
 input[type=text]:focus {
     border-radius: 0px;
-    border: 2px solid #0197F6;
-    color: #f5f5f5;
+    border-bottom: 2px solid #2CF6B3;
+    color: #2CF6B3;
 }
 
 input[type=submit] {
