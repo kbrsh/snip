@@ -55,50 +55,28 @@ input[type=submit]:hover {
     background-position: 100% 0;
 }
 
-#footer {
-  position: fixed;
-  color: #0197F6;
-  z-index: 100;
-  font-family: 'Quicksand';
-  font-weight: bold;
-}
-
-  #footer {
-    right: 5%;
-    bottom: 5%;
-  }
-
-#social {
-    position: fixed;
-    left: 5%;
-    bottom: 5%;
-  }
-
-#footer a {
-    text-decoration: none;
-    font-weight: bolder;
+footer {
+  color: #111111;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Gilroy";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  padding: 1rem;
+  width: 100%;
 }
 
 
-@media (max-width: 600px) {
-  #footer {
-      display: none;
-  }
-
-  #social {
-      display: none;
-  }
+footer a {
+  color: #111111;
+  border-bottom: 2px solid #111111;
+  transition: all 0.5s ease;
+  text-decoration: none;
 }
 
-/* logo */
-#logo {
-    top: 5%;
-    left: 5%;
-    position: fixed;
-}
-
-#logo img {
-    height: 57px;
-    width: 57px;
-    border-radius: 40%;
+footer a:hover {
+  color: #111111;
+  border-bottom: 2px solid #1098F7;
 }
