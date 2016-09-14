@@ -97,7 +97,22 @@ input[type=submit]:hover {
 }
 
 #success {
-  display: none;
+  margin-top: 3rem;
+  opacity: 0;
+  transition: all 0.5s ease;
+  color: #1098F7;
+}
+
+#success p {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#shortened-url {
+  border-bottom: 1px dotted #1098F7;
+  color: #1098F7;
+  padding-right: 0;
+  text-align: center;
 }
 
 

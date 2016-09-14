@@ -47,8 +47,8 @@ document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
 
   httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
-    document.getElementById("success").style.display = "block";
+    document.getElementById("success").style.opacity = "100";
     var urlObj = JSON.parse(url);
-    document.getElementById("success").innerHTML = urlObj.shortURL;
+    document.getElementById("shortened-url").value = urlObj.shortURL;
   });
 });
