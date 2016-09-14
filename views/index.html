@@ -28,6 +28,7 @@
 			<div class="content">
 		    <h1>SNIP</h1>
 		    <p>dead-simple URL shortener.</p>
+				<p id="error"></p>
 		    <form action="/new" method="POST" name="form" onsubmit="return check()">
 		        <input name="url" placeholder="URL" id="url" type="text"></input>
 		        <input type="submit" value="SHORTEN" onclick="ga('send', 'URL', '', 'shorten', 'Snipped URLs);"/>
