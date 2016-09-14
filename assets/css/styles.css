@@ -1,5 +1,8 @@
+/*General Styles*/
+
 body {
     background-color: #f5f5f5;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -14,6 +17,28 @@ p {
     font-size: 2rem;
     color: #111111;
 }
+
+.content {
+  max-width: 500px;
+  position: relative;
+}
+
+.center {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*Hero Styles*/
+
+#hero {
+  min-height: 100vh;
+  display: table;
+}
+
+
+
+
+/*Form Styles*/
 
 
 ::-webkit-input-placeholder {
@@ -63,6 +88,9 @@ input[type=submit] {
 input[type=submit]:hover {
     background-position: 100% 0;
 }
+
+
+/*Footer Styles*/
 
 footer {
   color: #111111;
