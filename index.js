@@ -120,7 +120,7 @@ app.get('/:id/stats', function(req, res) {
           util.showNotFound(res);
       } else {
           res.header('Content-Type', 'text/html');
-          res.send(statsController.renderStats(url.visits));
+          res.send(statsController.render(url.visits));
           util.log("[SNIP] Sending web stats for /" + id, "green");
       }
    });
