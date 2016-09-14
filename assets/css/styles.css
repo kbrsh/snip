@@ -49,6 +49,7 @@ p {
 
 ::-webkit-input-placeholder {
    color: #8F8F8F;
+   transition: all 0.5s ease;
 }
 
 
@@ -66,6 +67,7 @@ input[type=text] {
     font-weight: bold;
 }
 
+
 input[type=text]:focus {
     border-top: none;
     border-left: none;
@@ -73,6 +75,10 @@ input[type=text]:focus {
     border-radius: 0px;
     border-bottom: 2px solid #2CF6B3;
     color: #2CF6B3;
+}
+
+input[type=text]:focus::-webkit-input-placeholder {
+   color: #2CF6B3;
 }
 
 input[type=submit] {
