@@ -46,7 +46,9 @@ function check(e){
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  httpGet("localhost:3000/shorten/v1", function(url) {
-    document.getElementById("success").innerHTML = url.shortURL;
+  httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
+    document.getElementById("success").style.display = "block";
+    var urlObj = JSON.parse(url);
+    document.getElementById("success").innerHTML = urlObj.shortURL;
   });
 });
