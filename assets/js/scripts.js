@@ -19,18 +19,34 @@ function ValidURL(str) {
   }
 }
 
+// Util for Making GET request
+function httpGet(theUrl, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.send(null);
+}
+
 // Function called by form on submit to check and validate URL submitted
 function check(e){
     var inputValue=document.getElementById('url').value;
     if(ValidURL(addhttp(inputValue))) {
         document.getElementById('url').value = addhttp(inputValue);
-        document.forms["form"].submit();
+        return false;
     } else {
         document.getElementById("error").innerHTML = "Whoops! The URL is invalid!";
         return false;
     }
 }
 
+// Make Private API Call and Retrieve Data
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
+
+  httpGet("localhost:3000/shorten/v1", function(url) {
+    document.getElementById("success").innerHTML = url.shortURL;
+  });
 });
