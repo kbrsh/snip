@@ -13,19 +13,20 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 h1 {
     font-family: 'Montserrat-Bold', sans-serif;
-    font-size: 8rem;
+    font-size: 9rem;
     color: #1098F7;
 }
 
 p {
     font-family: 'Montserrat-Regular';
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #111111;
+    margin-bottom: 2rem;
 }
 
 .content {
-  max-width: 500px;
+  max-width: 275px;
 }
 
 .center {
@@ -77,7 +78,7 @@ input[type=text]:focus {
 input[type=submit] {
     width: 100%;
     margin-left: 0;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     border-radius: 0px;
     font-family: 'Montserrat-Regular';
     font-weight: bold;
