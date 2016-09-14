@@ -16,20 +16,29 @@ p {
 }
 
 
-input[type=text] {
-    background: transparent;
-    border-radius: 0px;
-    border-bottom: 2px solid #8F8F8F;
-    color: #8F8F8F;
-    font-family: 'Quicksand';
-    font-weight: bold;
-}
-
 ::-webkit-input-placeholder {
    color: #8F8F8F;
 }
 
+
+input[type=text] {
+    background: transparent;
+    padding-left: 0;
+    font-size: 1.5rem;
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #8F8F8F;
+    color: #8F8F8F;
+    font-family: 'Montserrat-Regular';
+    font-weight: bold;
+}
+
 input[type=text]:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
     border-radius: 0px;
     border-bottom: 2px solid #2CF6B3;
     color: #2CF6B3;
@@ -77,6 +86,6 @@ footer a {
 }
 
 footer a:hover {
-  color: #111111;
+  color: #1098F7;
   border-bottom: 2px solid #1098F7;
 }
