@@ -1,5 +1,12 @@
 @font-face {
-  font-family: 'Gilroy';
+  font-family: 'Montserrat-Regular';
   font-style: normal;
-  src: local('Gilroy-ExtraBold'), url(./Gilroy-ExtraBold.otf) format('opentype');
+  src: local('Montserrat-Regular'), url(./Montserrat-Regular.otf) format('opentype');
+}
+
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  src: local('Montserrat-Bold'), url(./Montserrat-Bold.otf) format('opentype');
 }
