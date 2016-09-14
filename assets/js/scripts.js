@@ -26,8 +26,7 @@ function check(){
         document.getElementById('url').value = addhttp(inputValue);
         document.forms["form"].submit();
     } else {
-        document.body.style.backgroundColor = "#D7263D"
-        document.body.style.color = "#F5F5F5"
+        document.getElementById("error").innerHTML = "Whoops! The URL is invalid!"
         return false;
     }
 }
