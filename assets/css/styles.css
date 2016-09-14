@@ -5,6 +5,12 @@ body {
     overflow-x: hidden;
 }
 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+
+
 h1 {
     font-family: 'Montserrat-Bold', sans-serif;
     font-size: 8rem;
@@ -20,12 +26,12 @@ p {
 
 .content {
   max-width: 500px;
-  position: relative;
 }
 
 .center {
   display: table-cell;
   vertical-align: middle;
+  text-align: center;
 }
 
 /*Hero Styles*/
@@ -33,10 +39,9 @@ p {
 #hero {
   min-height: 100vh;
   display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-
-
 
 /*Form Styles*/
 
@@ -72,16 +77,12 @@ input[type=text]:focus {
 input[type=submit] {
     width: 100%;
     margin-left: 0;
+    margin-top: 1rem;
     border-radius: 0px;
-    font-family: 'Quicksand';
+    font-family: 'Montserrat-Regular';
     font-weight: bold;
-    background: #0197F6;
+    background: #2CF6B3;
     text-align: center;
-    background: -webkit-linear-gradient(45deg, #5757D9 10%, #00B2B2 90%); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(45deg, #5757D9 10%, #00B2B2 90%); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(45deg, #5757D9 10%, #00B2B2 90%); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(45deg, #5757D9 10%, #00B2B2 90%); /* Standard syntax */
-    background-size: 200% 100%;
     transition: all 1s ease !important;
 }
 
