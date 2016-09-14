@@ -20,13 +20,17 @@ function ValidURL(str) {
 }
 
 // Function called by form on submit to check and validate URL submitted
-function check(){
+function check(e){
     var inputValue=document.getElementById('url').value;
     if(ValidURL(addhttp(inputValue))) {
         document.getElementById('url').value = addhttp(inputValue);
         document.forms["form"].submit();
     } else {
-        document.getElementById("error").innerHTML = "Whoops! The URL is invalid!"
+        document.getElementById("error").innerHTML = "Whoops! The URL is invalid!";
         return false;
     }
 }
+
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+});
