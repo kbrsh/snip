@@ -91,6 +91,10 @@ input[type=submit]:hover {
     background-position: 100% 0;
 }
 
+#error {
+  color: #E82F22;
+}
+
 
 /*Footer Styles*/
 
