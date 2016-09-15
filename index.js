@@ -157,15 +157,21 @@ app.get("/api/links", function(req, res) {
     });
 });
 
-
+// API GET "/api/total" to display total links made
 app.get("/api/total", function(req, res) {
+
+    // Set Headers JSON and CORS
     res.header('Content-Type', 'application/json');
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    // Get all Links
     storage.getAllLinks(req).then(function(links) {
       if(req.query.pretty === "true") {
+        // If pretty, send formatted JSON with total links
         res.send(JSON.stringify({total:links.length}, null, 3));
       } else {
+        // Send minfied JSON with total links
         res.send(JSON.stringify({total:links.length}));
       }
     });
