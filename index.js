@@ -178,9 +178,13 @@ app.get("/api/total", function(req, res) {
 });
 
 
+// Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function (req, res) {
+    // Seed database if seed option present
     if(process.argv.slice(2)[0] === ("seed" || "SEED")) {
       storage.seedDatabase();
     }
+
+    // Log it
     util.log("[SNIP] Listening", "green");
 });
