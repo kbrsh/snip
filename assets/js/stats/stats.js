@@ -10,6 +10,8 @@ function httpGet(theUrl, callback) {
 }
 
 
+// Make get request and fill in visits with number of visits
+// via API
 httpGet("/" + window.location.pathname.split("/")[1] + "/api", function(url) {
   var urlObj = JSON.parse(url);
   document.getElementById("visits").innerHTML = urlObj.stats.visits;
