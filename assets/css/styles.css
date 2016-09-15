@@ -61,9 +61,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #features {
   height: auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: center;
+}
+
+#features h5 {
+  margin-bottom: 7.5rem;
 }
 
 /*Form Styles*/
