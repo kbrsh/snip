@@ -91,30 +91,48 @@ app.get('/:id/api', function(req, res) {
    });
 });
 
+
+// GET '/:id/stats' and send stats
 app.get('/:id/stats', function(req, res) {
+  // Get ID
    var id = req.params.id;
+
+  //  Get URL from storage
    storage.getURL(id).then(function(url) {
       if(!url) {
+        // Send 404 if not found
           util.showNotFound(res);
       } else {
+        // Send stats.html if found
           res.header('Content-Type', 'text/html');
           res.sendFile(__dirname + "/views/stats/stats.html");
+
+          // Log it
           util.log("[SNIP] Sending web stats for /" + id, "green");
       }
    });
 });
 
+
+// API GET "/shorten/v1"
 app.get("/shorten/v1", function(req, res) {
+  // Get the long URL
     var apiLongUrl = req.query.url;
+
+    // Set Headers to JSON and allow CORS
     res.header('Content-Type', 'application/json');
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
+    // UTIL for sending the response format
     var sendApiResponse = url => {
         res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
     };
 
+    // Add URL to storage then send response
     storage.addURL(apiLongUrl).then(sendApiResponse);
+
+    // Log it
     util.log("[SNIP] User submitted URL to be Snipped via API", "green");
 });
 
