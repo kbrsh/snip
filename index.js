@@ -136,18 +136,27 @@ app.get("/shorten/v1", function(req, res) {
     util.log("[SNIP] User submitted URL to be Snipped via API", "green");
 });
 
+
+// API GET "/api/links" to display all Links
 app.get("/api/links", function(req, res) {
+    // Set Headers JSON and CORS
     res.header('Content-Type', 'application/json');
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+    // Get all links from storage
     storage.getAllLinks(req).then(function(links) {
+      // Check if output should be pretty
       if(req.query.pretty === "true") {
+        // If pretty, then send formatted JSON
         res.send(JSON.stringify(links, null, 3));
       } else {
+        // Send Minified JSON
         res.send(JSON.stringify(links));
       }
     });
 });
+
 
 app.get("/api/total", function(req, res) {
     res.header('Content-Type', 'application/json');
