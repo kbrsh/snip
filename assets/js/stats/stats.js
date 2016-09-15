@@ -9,7 +9,12 @@ function httpGet(theUrl, callback) {
     xmlHttp.send(null);
 }
 
-if(document.getElementById("visits").innerHTML === "1") {
-    document.getElementById("p").innerHTML = "person";
-    document.getElementById("h").innerHTML = "has";
-}
+
+httpGet("/" + window.location.pathname.split("/")[1] + "/api", function(url) {
+  var urlObj = JSON.parse(url);
+  document.getElementById("visits").innerHTML = urlObj.stats.visits;
+  if(document.getElementById("visits").innerHTML === "1") {
+      document.getElementById("p").innerHTML = "person";
+      document.getElementById("h").innerHTML = "has";
+  }
+});
