@@ -12,9 +12,12 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 
 h1 {
-    font-family: 'Montserrat-Bold', sans-serif;
     font-size: 9rem;
-    color: #1098F7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat-Bold', sans-serif;
+  color: #1098F7;
 }
 
 p {
@@ -42,6 +45,14 @@ p {
   display: table;
   margin-left: auto;
   margin-right: auto;
+}
+
+/*Features Styles*/
+
+#features {
+  height: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 /*Form Styles*/
