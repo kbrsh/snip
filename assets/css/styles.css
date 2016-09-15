@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #1098F7;
 }
 
-p {
+.tagline {
     font-family: 'Montserrat-Regular';
     font-weight: bolder;
     font-size: 2.5rem;
