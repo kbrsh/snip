@@ -115,9 +115,9 @@ input[type=submit]:hover {
 }
 
 #shortened-url {
-  border-bottom: 1px dotted #1098F7;
+  border: 1px dotted #1098F7;
   color: #1098F7;
-  padding-right: 0;
+  padding: 1rem;
   text-align: center;
 }
 
