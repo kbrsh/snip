@@ -38,6 +38,14 @@ p {
   text-align: center;
 }
 
+.subhead {
+  color: #111111;
+}
+
+.body-text {
+  color: #8F8F8F
+}
+
 /*Hero Styles*/
 
 #hero {
