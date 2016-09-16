@@ -69,6 +69,10 @@ module.exports.seedDatabase = function() {
   });
 }
 
+module.exports.getURL("6qlrf6r").then(function(url) {
+  url.destroy();
+});
+
 var allLinksToArray = function(req) {
     var allLinksArray = [];
     return URL.findAll().then(links => {
