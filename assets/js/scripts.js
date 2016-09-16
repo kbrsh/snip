@@ -35,20 +35,14 @@ function check(e){
     var inputValue=document.getElementById('url').value;
     if(ValidURL(addhttp(inputValue))) {
         document.getElementById('url').value = addhttp(inputValue);
+        httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
+          document.getElementById("success").style.opacity = "100";
+          var urlObj = JSON.parse(url);
+          document.getElementById("shortened-url").value = urlObj.shortURL;
+        });
         return false;
     } else {
         document.getElementById("error").innerHTML = "Whoops! The URL is invalid!";
         return false;
     }
 }
-
-// Make Private API Call and Retrieve Data
-document.getElementById("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
-    document.getElementById("success").style.opacity = "100";
-    var urlObj = JSON.parse(url);
-    document.getElementById("shortened-url").value = urlObj.shortURL;
-  });
-});
