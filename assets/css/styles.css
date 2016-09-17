@@ -57,6 +57,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
+#logo {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+#logo img {
+  height: 100px;
+  width: 100px;
+}
+
 /*Features Styles*/
 
 #features {
