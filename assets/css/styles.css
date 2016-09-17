@@ -83,6 +83,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 5rem;
 }
 
+#how-it-works img {
+  height: 75px;
+  width: 75px;
+  margin-bottom: 2rem;
+}
+
 /*Form Styles*/
 
 
