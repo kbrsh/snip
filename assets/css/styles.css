@@ -70,6 +70,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 5rem;
 }
 
+/*How It Workes Styles*/
+
+#how-it-works {
+  height: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+#how-it-works h5 {
+  margin-bottom: 5rem;
+}
+
 /*Form Styles*/
 
 
