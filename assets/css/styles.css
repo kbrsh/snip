@@ -59,13 +59,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #logo {
   position: absolute;
-  top: 1%;
-  left: 1%;
+  top: 3%;
+  left: 3%;
 }
 
 #logo img {
-  height: 100px;
-  width: 100px;
+  height: 75px;
 }
 
 /*Features Styles*/
