@@ -60,11 +60,13 @@ module.exports.seedDatabase = function() {
   fs.unlink(__dirname + "/../database.sqlite");
   data.getData(function(data) {
     for(var i = 0; i < data.length; i++) {
+      if(data[i].longURL.indexOf("snipit.ga") === -1) {
       URL.create({
         id: data[i].id,
         visits: data[i].stats.visits,
         url: data[i].longURL
       });
+      }
     }
   });
 }
