@@ -19,6 +19,14 @@ function ValidURL(str) {
   }
 }
 
+// See if URL contains "snipit.ga"
+function containsSelfURL(str) {
+  if(str.indexOf("snipit.ga") !== -1) {
+    return false;
+  } else {
+    return true;
+  }
+}
 // Util for Making GET request
 function httpGet(theUrl, callback) {
     var xmlHttp = new XMLHttpRequest();
