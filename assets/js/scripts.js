@@ -27,6 +27,7 @@ function containsSelfURL(str) {
     return true;
   }
 }
+
 // Util for Making GET request
 function httpGet(theUrl, callback) {
     var xmlHttp = new XMLHttpRequest();
@@ -41,7 +42,7 @@ function httpGet(theUrl, callback) {
 // Function called by form on submit to check and validate URL submitted
 function check(e){
     var inputValue=document.getElementById('url').value;
-    if(ValidURL(addhttp(inputValue))) {
+    if(ValidURL(addhttp(inputValue)) && containsSelfURL(inputValue)) {
         document.getElementById('url').value = addhttp(inputValue);
         httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
           document.getElementById("success").style.opacity = "100";
