@@ -53,6 +53,7 @@ function check(e){
           document.getElementById("success").style.opacity = "100";
           var urlObj = JSON.parse(url);
           document.getElementById("shortened-url").value = urlObj.shortURL;
+          clearInput();
         });
         return false;
     } else {
