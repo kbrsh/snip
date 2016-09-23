@@ -29,8 +29,6 @@ app.get('/', function(req, res) {
    res.sendFile(__dirname + '/views/index.html');
 });
 
-});
-
 
 // GET '/:id'
 app.get('/:id', function(req, res) {
