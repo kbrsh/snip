@@ -11,6 +11,9 @@ var util = require('./src/util.js');
 // Get database methods
 var storage = require('./models/storage.js');
 
+// Get mail methods
+var mail = require("./mail/mail.js");
+
 // Controllers
 var newController = require("./controllers/newController.js");
 var statsController = require("./controllers/statsController.js");
@@ -27,6 +30,8 @@ app.use(express.static(__dirname + '/assets'));
 app.get('/', function(req, res) {
   // Send index.html file
    res.sendFile(__dirname + '/views/index.html');
+
+
 });
 
 
