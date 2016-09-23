@@ -27,26 +27,6 @@ app.use(express.static(__dirname + '/assets'));
 app.get('/', function(req, res) {
   // Send index.html file
    res.sendFile(__dirname + '/views/index.html');
-   var mailOptions = {
-    from: 'hey@snipit.ga', // sender address
-    to: 'simplecooldude1@gmail.com', // list of receivers
-    subject: 'Email Example',
-    html: '<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><h1>Hello world ✔</h1>' // You can choose to send an HTML body instead
-};
-   var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'simplecooldude1@gmail.com', // Your email id
-            pass: process.env.gmailPass // Your password
-        }
-    });
-
-    transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        console.log(error);
-    }else{
-        console.log('Message sent: ' + info.response);
-    };
 });
 
 });
