@@ -39,6 +39,11 @@ function httpGet(theUrl, callback) {
     xmlHttp.send(null);
 }
 
+// UTIL for clearing input to prevent multiple spam entries
+function clearInput() {
+  document.getElementById('url').value = "";
+}
+
 // Function called by form on submit to check and validate URL submitted
 function check(e){
     var inputValue=document.getElementById('url').value;
