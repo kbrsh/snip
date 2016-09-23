@@ -7,17 +7,17 @@ var mailOptions = {
  subject: 'Hey',
  html: `<head>
  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
- <link href="/css/styles.css"/>
  </head>
  <body>
- <h1>Hey</h1>
+ <h1 style="color: #1098F7;">Hey</h1>
+ <p>A user just shortened a URL on <a href="http://snipit.ga">Snip</a>.</p>
  </body>` // You can choose to send an HTML body instead
 };
 var transporter = nodemailer.createTransport({
      service: 'Gmail',
      auth: {
          user: 'simplecooldude1@gmail.com', // Your email id
-         pass: process.env.gmailPass // Your password
+         pass:  // Your password
      }
  });
 
@@ -28,7 +28,7 @@ var sendUserShortenedLinkMail = function() {
     } else{
       util.log("Message Send", "green");
     };
-  }
+  });
 }
 
 module.exports.sendUserShortenedLinkMail = sendUserShortenedLinkMail;
