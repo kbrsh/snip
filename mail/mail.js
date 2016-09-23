@@ -21,9 +21,12 @@ var transporter = nodemailer.createTransport({
      }
  });
 
- transporter.sendMail(mailOptions, function(error, info){
- if(error){
-     util.log(error, "red");
- }else{
-     util.log("Message Send", "green");
- };
+var sendUserShortenedLinkMail = function() {
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+      util.log(error, "red");
+    } else{
+      util.log("Message Send", "green");
+    };
+  }
+}
