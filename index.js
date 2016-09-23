@@ -30,9 +30,6 @@ app.use(express.static(__dirname + '/assets'));
 app.get('/', function(req, res) {
   // Send index.html file
    res.sendFile(__dirname + '/views/index.html');
-
-   mail.sendUserShortenedLinkMail();
-
 });
 
 
@@ -125,10 +122,10 @@ app.get("/shorten/v1", function(req, res) {
   // Get the long URL
     var apiLongUrl = req.query.url;
 
-    // Set Headers to JSON and allow CORS
+    // Set Headers to JSON
     res.header('Content-Type', 'application/json');
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    // res.header("Access-Control-Allow-Origin", "*");
+    // res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     // UTIL for sending the response format
     var sendApiResponse = url => {
