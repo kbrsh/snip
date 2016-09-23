@@ -4,8 +4,14 @@ var util = require("../src/util.js")
 var mailOptions = {
  from: 'hey@snipit.ga', // sender address
  to: 'simplecooldude1@gmail.com', // list of receivers
- subject: 'Email Example',
- html: '<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"><h1>Hello world ✔</h1>' // You can choose to send an HTML body instead
+ subject: 'Hey',
+ html: `<head>
+ <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+ <link href="/css/styles.css"/>
+ </head>
+ <body>
+ <h1>Hey</h1>
+ </body>` // You can choose to send an HTML body instead
 };
 var transporter = nodemailer.createTransport({
      service: 'Gmail',
