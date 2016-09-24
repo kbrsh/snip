@@ -136,7 +136,7 @@ app.get("/shorten/v1", function(req, res) {
     storage.addURL(apiLongUrl).then(sendApiResponse);
 
     // Send Me Notification mail
-    // mail.sendUserShortenedLinkMail();
+    // mail.sendUserShortenedLinkMailToAdmin();
 
     // Log it
     util.log("[SNIP] User submitted URL to be Snipped via API", "green");
