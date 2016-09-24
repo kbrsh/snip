@@ -21,7 +21,7 @@ var transporter = nodemailer.createTransport({
      }
  });
 
-var sendUserShortenedLinkMail = function() {
+var sendUserShortenedLinkMailToAdmin = function() {
   transporter.sendMail(mailOptions, function(error, info) {
     if(error){
       util.log(error, "red");
@@ -31,4 +31,4 @@ var sendUserShortenedLinkMail = function() {
   });
 }
 
-module.exports.sendUserShortenedLinkMail = sendUserShortenedLinkMail;
+module.exports.sendUserShortenedLinkMailToAdmin = sendUserShortenedLinkMailToAdmin;
