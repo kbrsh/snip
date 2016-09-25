@@ -119,7 +119,7 @@ app.get('/:id/stats', function(req, res) {
 
 // API GET "/shorten/v1"
 app.get("/api/shorten/v1", function(req, res) {
-  // Get the long URL
+    // Get the long URL
     var apiLongUrl = req.query.url;
 
     // Set Headers to JSON
