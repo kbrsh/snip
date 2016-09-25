@@ -49,7 +49,7 @@ function check(e){
     var inputValue=document.getElementById('url').value;
     if(ValidURL(addhttp(inputValue)) && containsSelfURL(inputValue)) {
         document.getElementById('url').value = addhttp(inputValue);
-        httpGet("/shorten/v1?url=" + document.getElementById("url").value, function(url) {
+        httpGet("/api/shorten/v1?url=" + document.getElementById("url").value, function(url) {
           document.getElementById("success").style.opacity = "100";
           var urlObj = JSON.parse(url);
           document.getElementById("shortened-url").value = urlObj.shortURL;
