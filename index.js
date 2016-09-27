@@ -88,10 +88,10 @@ app.get('/:id/api', function(req, res) {
           // Check to make pretty or not
           if(req.query.pretty === "true") {
             // Send formatted API Data
-            res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url), null, 3));
+            res.send(JSON.stringify(api.formatAPILink(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url), null, 3));
           } else {
             // Send nonformatted API Data
-            res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
+            res.send(JSON.stringify(api.formatAPILink(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
           }
 
           // Log it down
@@ -133,7 +133,7 @@ app.get("/api/shorten/v1", function(req, res) {
 
     // UTIL for sending the response format
     var sendApiResponse = url => {
-        res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
+        res.send(JSON.stringify(api.formatAPILink(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
     };
 
 
