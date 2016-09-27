@@ -5,8 +5,11 @@ var app = express();
 // Use bodyparser to parse form parameters
 var bodyParser = require('body-parser');
 
-// Get API functions
+// Get functions to validate url
 var validurl = require("./src/validurl.js");
+
+// Get API functions
+var api = require("./src/api/api.js")
 
 // Get utilities
 var util = require('./src/util.js');
