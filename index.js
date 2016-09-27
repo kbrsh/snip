@@ -124,7 +124,6 @@ app.get('/:id/stats', function(req, res) {
 app.get("/api/shorten/v1", function(req, res) {
     // Get the long URL
     var apiLongUrl = req.query.url;
-    if(apiLongURL)
 
     // Set Headers to JSON
     res.header('Content-Type', 'application/json');
@@ -134,8 +133,14 @@ app.get("/api/shorten/v1", function(req, res) {
         res.send(JSON.stringify(util.formatLinkAPI(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
     };
 
-    // Add URL to storage then send response
-    storage.addURL(apiLongUrl).then(sendApiResponse);
+
+    // Check if URL is valid
+    if(validurl.validate(apiLongURL)) {
+      // Add URL to storage then send response
+      storage.addURL(apiLongUrl).then(sendApiResponse);
+    } else {
+      
+    }
 
     // Send Me Notification mail
     // mail.sendUserShortenedLinkMailToAdmin();
