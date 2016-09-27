@@ -1,5 +1,5 @@
 // Function to send error from api
-var sendAPIError = function(code, message) {
+var formatAPIError = function(code, message) {
   return {
     error: code + ": " + message
   }
