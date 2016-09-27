@@ -146,6 +146,8 @@ app.get("/api/shorten/v1", function(req, res) {
     } else {
       // Send error
       res.send(JSON.stringify(api.formatAPIError("EINVALIDURL", "The requested URL is invalid")));
+      // Log it
+      util.log("[SNIP] ERR: Sending EINVALIDURL error via API", "yellow");
     }
 
     // Send Me Notification mail
