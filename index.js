@@ -128,8 +128,6 @@ app.get("/api/shorten/v1", function(req, res) {
 
     // Set Headers to JSON
     res.header('Content-Type', 'application/json');
-    // res.header("Access-Control-Allow-Origin", "*");
-    // res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     // UTIL for sending the response format
     var sendApiResponse = url => {
