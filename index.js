@@ -138,9 +138,11 @@ app.get("/api/shorten/v1", function(req, res) {
 
 
     // Check if URL is valid
-    if(validurl.validate(apiLongURL)) {
+    if(validurl.validate(apiLongUrl)) {
       // Add URL to storage then send response
       storage.addURL(apiLongUrl).then(sendApiResponse);
+      // Log it
+      util.log("[SNIP] User submitted URL to be Snipped via API", "green");
     } else {
       // Send error
       res.send(JSON.stringify(api.formatAPIError("EINVALIDURL", "The requested URL is invalid")));
@@ -149,8 +151,6 @@ app.get("/api/shorten/v1", function(req, res) {
     // Send Me Notification mail
     // mail.sendUserShortenedLinkMailToAdmin();
 
-    // Log it
-    util.log("[SNIP] User submitted URL to be Snipped via API", "green");
 });
 
 
