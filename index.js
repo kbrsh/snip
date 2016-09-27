@@ -142,7 +142,8 @@ app.get("/api/shorten/v1", function(req, res) {
       // Add URL to storage then send response
       storage.addURL(apiLongUrl).then(sendApiResponse);
     } else {
-
+      // Send error
+      res.send(JSON.stringify(api.formatAPIError("EINVALIDURL", "The requested URL is invalid")));
     }
 
     // Send Me Notification mail
