@@ -5,4 +5,4 @@ var formatAPIError = function(code, message) {
   }
 }
 
-module.exports = sendAPIError;
+module.exports = formatAPIError;
