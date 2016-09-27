@@ -23,5 +23,4 @@ var showNotFound = (res) => {
 
 // Export utilities
 module.exports.showNotFound = showNotFound;
-module.exports.formatLinkAPI = formatLinkAPI;
 module.exports.log = log;
