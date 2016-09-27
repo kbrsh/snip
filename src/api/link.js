@@ -10,4 +10,4 @@ var formatLinkAPI = function(id, visits, shortURL, longURL) {
   }
 }
 
-module.exports.formatLinkAPI = formatLinkAPI;
+module.exports = formatLinkAPI;

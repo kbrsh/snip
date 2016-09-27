@@ -5,7 +5,7 @@ var app = express();
 // Use bodyparser to parse form parameters
 var bodyParser = require('body-parser');
 
-// Get functions to validate url
+// Get API functions
 var validurl = require("./src/validurl.js");
 
 // Get utilities
@@ -139,7 +139,7 @@ app.get("/api/shorten/v1", function(req, res) {
       // Add URL to storage then send response
       storage.addURL(apiLongUrl).then(sendApiResponse);
     } else {
-      
+
     }
 
     // Send Me Notification mail
