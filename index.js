@@ -5,6 +5,9 @@ var app = express();
 // Use bodyparser to parse form parameters
 var bodyParser = require('body-parser');
 
+// Get functions to validate url
+var validurl = require("./src/validurl.js");
+
 // Get utilities
 var util = require('./src/util.js');
 
@@ -121,6 +124,7 @@ app.get('/:id/stats', function(req, res) {
 app.get("/api/shorten/v1", function(req, res) {
     // Get the long URL
     var apiLongUrl = req.query.url;
+    if(apiLongURL)
 
     // Set Headers to JSON
     res.header('Content-Type', 'application/json');
