@@ -4,3 +4,5 @@ var sendAPIError = function(code, message) {
     error: code + ": " + message
   }
 }
+
+module.exports.sendAPIError = sendAPIError;
