@@ -53,10 +53,8 @@ app.get('/:id', function(req, res) {
           // If found
           // Update stats
           url.increment('visits', {by: 1});
-
           // Redirect to URL
           res.redirect(url.url);
-
           //  Log it down
           util.log("[SNIP] User redirected from /" + id, "green");
       }
@@ -79,12 +77,10 @@ app.get('/:id/api', function(req, res) {
       //  If doesn't exist, send ENOTFOUND in JSON
       if(!url) {
           res.send(JSON.stringify(api.formatAPIError("ENOTFOUND", "The requested URL is not valid, or is not found")));
-
           // Log it down
           util.log("[SNIP] ERR: Sending ENOTFOUND error", "yellow");
       } else {
           // Found
-
           // Check to make pretty or not
           if(req.query.pretty === "true") {
             // Send formatted API Data
