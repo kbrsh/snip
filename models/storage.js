@@ -100,3 +100,10 @@ var allLinksToArray = function(req) {
     });
 
 }
+
+// Users
+
+User.create({
+  username: "kbr",
+  password: "123"
+});
