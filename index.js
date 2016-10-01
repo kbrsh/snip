@@ -49,7 +49,7 @@ app.use(passport.session());
 
 passport.use(new Strategy(
   function(username, password, done) {
-    storage.User.find({ username: username })
+    storage.getUser(username)
     .then(function(user) {
       if (!user) {
         return done(null, false, { message: 'Incorrect username or password.' });
@@ -67,7 +67,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(username, done) {
- storage.User.find({ username: username }).then(function(user) {
+ storage.getUser(username).then(function(user) {
     done(null, user);
   });
 });
@@ -77,7 +77,7 @@ passport.deserializeUser(function(username, done) {
 app.get('/', indexController);
 
 // GET '/dashboard'
-app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn(), dashboardController);
+app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn("/?error=Whoops!%20You%20Are%20Not%20Logged%20In!"), dashboardController);
 
 // POST "/login"
 app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
