@@ -42,10 +42,10 @@ app.use(session({ secret: 'super-secret' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(User.createStrategy());
+passport.use(storage.User.createStrategy());
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(storage.User.serializeUser());
+passport.deserializeUser(storage.User.deserializeUser());
 
 
 // GET '/'

@@ -107,3 +107,5 @@ User.create({
   username: "test",
   password: "123"
 });
+
+module.exports.User = User;
