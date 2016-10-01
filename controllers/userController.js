@@ -11,5 +11,5 @@ module.exports = function(req, res) {
   // Set content type to JSON
   res.header('Content-Type', 'application/json');
 
-  res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#"), req.user.premium)));
+  res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#").shift(), req.user.premium)));
 }
