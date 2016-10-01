@@ -20,6 +20,9 @@ var storage = require('./models/storage.js');
 // Get mail methods
 var mail = require("./mail/mail.js");
 
+// Get auth methods
+
+
 // Controllers
 var indexController = require("./controllers/indexController.js");
 var urlController = require("./controllers/urlController.js");
