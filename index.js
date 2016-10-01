@@ -188,7 +188,7 @@ app.get("/api/total", function(req, res) {
 });
 
 // API GET "/api/user" to get user's info
-app.get('/api/user', require('connect-ensure-login').ensureLoggedIn(), userController);
+app.get('/api/user', userController);
 
 // Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function (req, res) {
