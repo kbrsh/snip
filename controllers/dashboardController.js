@@ -1,3 +1,6 @@
+var storage = require("../models/storage.js");
+
 module.exports = function(req, res) {
-  res.render('dashboard', { user: req.user, links: req.user.links.split("#") });
+  var links = req.user.links.split("#");
+  res.render('dashboard', {user: req.user, links: links});
 }
