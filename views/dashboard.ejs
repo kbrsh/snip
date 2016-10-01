@@ -22,7 +22,9 @@
 			<button class="btn btn-clear" id="settingsButton">Settings</button>
 		</div>
 	</div>
-  <div class="dashboard-new">
+  <div class="dashboard-new text-center">
+		<img id="profile-pic"/>
+		<h3 class="margin-bottom">Hey, <%= user.username %></h3>
     <form name="form" onsubmit="return check()" id="form">
         <input name="url" placeholder="URL" id="url" type="text"></input><input type="submit" value="SHORTEN"/>
     </form>
