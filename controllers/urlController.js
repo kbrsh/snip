@@ -26,7 +26,7 @@ module.exports = function(req, res) {
 }
 
 // Get info of a URL
-module.exports.api.info = function(req, res) {
+module.exports.api = function(req, res) {
    // get id from URL
    var id = req.params.id;
 
