@@ -100,3 +100,9 @@ var allLinksToArray = function(req) {
     });
 
 }
+
+// Users
+
+module.exports.getUserById = function(id, cb) {
+  return User.findById(id);
+}
