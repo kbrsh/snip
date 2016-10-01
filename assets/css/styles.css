@@ -244,6 +244,11 @@ input[type=submit]:hover {
   margin-top: 10rem;
 }
 
+.dashboard-new img {
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
 .dashboard-links {
   text-align: center;
   width: auto;
