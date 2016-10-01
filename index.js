@@ -42,29 +42,11 @@ app.get('/:id', urlController);
 
 
 // Get '/:id/api'
-app.get('/:id/api', urlController.api);
+app.get('/:id/api', urlController.api.info);
 
 
 // GET '/:id/stats' and send stats
-app.get('/:id/stats', function(req, res) {
-  // Get ID
-   var id = req.params.id;
-
-  //  Get URL from storage
-   storage.getURL(id).then(function(url) {
-      if(!url) {
-        // Send 404 if not found
-          util.showNotFound(res);
-      } else {
-        // Send stats.html if found
-          res.header('Content-Type', 'text/html');
-          res.sendFile(__dirname + "/views/stats/stats.html");
-
-          // Log it
-          util.log("[SNIP] Sending web stats for /" + id, "green");
-      }
-   });
-});
+app.get('/:id/stats', urlController.api.stats);
 
 
 // API GET "/shorten/v1"

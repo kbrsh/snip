@@ -23,7 +23,7 @@ module.exports = function(req, res) {
 }
 
 // Get info of a URL
-module.exports.api = function(req, res) {
+module.exports.api.info = function(req, res) {
    // get id from URL
    var id = req.params.id;
 
@@ -52,6 +52,26 @@ module.exports.api = function(req, res) {
 
           // Log it down
           util.log("[SNIP] Sending API stats for /" + id, "green");
+      }
+   });
+}
+
+module.exports.api.stats = function(req, res) {
+  // Get ID
+   var id = req.params.id;
+
+  //  Get URL from storage
+   storage.getURL(id).then(function(url) {
+      if(!url) {
+        // Send 404 if not found
+          util.showNotFound(res);
+      } else {
+        // Send stats.html if found
+          res.header('Content-Type', 'text/html');
+          res.sendFile(__dirname + "/views/stats/stats.html");
+
+          // Log it
+          util.log("[SNIP] Sending web stats for /" + id, "green");
       }
    });
 }
