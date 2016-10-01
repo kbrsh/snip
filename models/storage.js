@@ -26,6 +26,7 @@ var URL = sequelize.define('URL', {
 });
 
 var User = passportLocalSequelize.defineUser(sequelize, {
+    email: Sequelize.STRING,
     links: Sequelize.STRING
 });
 
@@ -105,21 +106,23 @@ var allLinksToArray = function(req) {
 
 // Users
 
-User.create({
-  username: "test",
-  salt: "WquZ012C",
-  hash: "c5e635ec235a51e89f6ed7d4857afe58663d54f5",
-  links: ""
-});
 
 module.exports.createUser = function(user) {
   var salt = crypto.randomBytes(128).toString('base64');
-  var key = crypto.pbkdf2Sync('password', salt, 100000, 512, 'sha512');
+  var key = crypto.pbkdf2Sync(user.password, salt, 100000, 512, 'sha512');
   User.create({
     username: user.username,
+    email: user.email
     salt: salt,
-    hash: key
+    hash: key,
+    links: ""
   });
 }
+
+module.exports.createUser({
+  username: "kbr",
+  password: "123",
+  email: "simplecooldude1@gmail.com"
+});
 
 module.exports.User = User;
