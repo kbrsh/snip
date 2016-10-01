@@ -73,9 +73,11 @@ function check(e){
 }
 
 // Show modal on login click
-document.getElementById("login").addEventListener("click", function() {
-  var loginModal = document.createElement("div");
-  loginModal.classList.add("modal");
-  loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><form action="/auth/login" method="POST" class="login-form"><input type="text" placeholder="USERNAME" name="username"/><input type="password" placeholder="PASSWORD" name="password"/><input type="submit"/></form></div>`;
-  document.body.appendChild(loginModal);
-});
+if(document.getElementById("login")) {
+  document.getElementById("login").addEventListener("click", function() {
+    var loginModal = document.createElement("div");
+    loginModal.classList.add("modal");
+    loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><form action="/auth/login" method="POST" class="login-form"><input type="text" placeholder="USERNAME" name="username"/><input type="password" placeholder="PASSWORD" name="password"/><input type="submit"/></form></div>`;
+    document.body.appendChild(loginModal);
+  });
+}
