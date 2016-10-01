@@ -35,6 +35,9 @@ var urlController = require("./controllers/urlController.js");
 // Express config
 app.use(express.static(__dirname + '/assets'));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(session({ secret: 'super-secret' }));
