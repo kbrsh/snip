@@ -115,7 +115,9 @@ app.get("/api/shorten/v1", function(req, res) {
             storage.getUser(req.user.username).then(function(user) {
               var links = user.links.split("#");
               links.push(url.id);
-              user.links = links.join("#");
+              user.updateAttributes({
+                links: links.join("#")
+              });
             });
         }
     };
