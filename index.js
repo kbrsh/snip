@@ -43,7 +43,7 @@ passport.use(new Strategy(
   });
 
   passport.deserializeUser(function(id, cb) {
-    db.users.findById(id, function (err, user) {
+    storage.findUserById(id).then(function (err, user) {
       if (err) { return cb(err); }
       cb(null, user);
     });
