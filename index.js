@@ -28,6 +28,18 @@ var indexController = require("./controllers/indexController.js");
 var urlController = require("./controllers/urlController.js");
 
 
+// Setup auth
+passport.use(new Strategy(
+  function(username, password, cb) {
+    db.users.findByUsername(username, function(err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (user.password != password) { return cb(null, false); }
+      return cb(null, user);
+    });
+  }));
+
+
 // Express config
 // Use body parser
 app.use(bodyParser.urlencoded({extended: true}));
