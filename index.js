@@ -21,6 +21,7 @@ var storage = require('./models/storage.js');
 var mail = require("./mail/mail.js");
 
 // Controllers
+var indexController = require("./controllers/indexController.js");
 var newController = require("./controllers/newController.js");
 var statsController = require("./controllers/statsController.js");
 
