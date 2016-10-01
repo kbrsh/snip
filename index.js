@@ -34,10 +34,7 @@ app.use(express.static(__dirname + '/assets'));
 
 
 // GET '/'
-app.get('/', function(req, res) {
-  // Send index.html file
-   res.sendFile(__dirname + '/views/index.html');
-});
+app.get('/', indexController);
 
 
 // GET '/:id'
