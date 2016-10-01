@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var passportLocalSequelize = require('passportLocalSequelize');
+var passportLocalSequelize = require('passport-local-sequelize');
 var data = require('../data/data.js');
 var fs = require('fs');
 var sequelize = new Sequelize('database', 'username', 'password', {
@@ -23,7 +23,7 @@ var URL = sequelize.define('URL', {
     url: Sequelize.TEXT
 });
 
-var User = passportLocalSequelize.defineUser(mydb, {
+var User = passportLocalSequelize.defineUser(sequelize, {
     links: Sequelize.STRING
 });
 
@@ -105,7 +105,8 @@ var allLinksToArray = function(req) {
 
 User.create({
   username: "test",
-  password: "123",
+  salt: "WquZ012C",
+  hash: "c5e635ec235a51e89f6ed7d4857afe58663d54f5",
   links: ""
 });
 
