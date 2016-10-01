@@ -24,7 +24,8 @@ var URL = sequelize.define('URL', {
 
 var User = sequelize.define('User', {
     id: { type: Sequelize.STRING(), unique: true, primaryKey: true },
-    password: Sequelize.STRING()
+    password: Sequelize.STRING(),
+    links: Sequelize.STRING()
 });
 
 sequelize.sync();
