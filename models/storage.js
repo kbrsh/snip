@@ -113,9 +113,12 @@ User.create({
 });
 
 module.exports.createUser = function(user) {
+  var salt = crypto.randomBytes(128).toString('base64');
+  var key = crypto.pbkdf2Sync('password', salt, 100000, 512, 'sha512');
   User.create({
     username: user.username,
-    salt: crypto.randomBytes(128).toString('base64'),
+    salt: salt,
+    hash: key
   });
 }
 
