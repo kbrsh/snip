@@ -60,8 +60,15 @@ passport.use(new LocalStrategy(
     });
 }));
 
-passport.serializeUser(storage.User.serializeUser());
-passport.deserializeUser(storage.User.deserializeUser());
+passport.serializeUser(function(user, done) {
+  done(null, user.username);
+});
+
+passport.deserializeUser(function(username, done) {
+ storage.User.find({ username: username }).then(function(user) {
+    done(null, user);
+  });
+});
 
 
 // GET '/'
