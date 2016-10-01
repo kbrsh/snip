@@ -240,6 +240,13 @@ input[type=submit]:hover {
   margin-top: 10rem;
 }
 
+.dashboard-links {
+  text-align: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*Footer Styles*/
 
 footer {
@@ -251,7 +258,6 @@ footer {
   height: auto;
   padding: 1rem;
   width: 100%;
-  bottom: 0;
 }
 
 
