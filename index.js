@@ -55,6 +55,8 @@ passport.use(new Strategy(
 app.use(bodyParser.urlencoded({extended: true}));
 // Cookie parser
 app.use(require('cookie-parser')());
+// Session
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 // Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
 
