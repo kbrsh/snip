@@ -23,7 +23,6 @@ var mail = require("./mail/mail.js");
 // Controllers
 var indexController = require("./controllers/indexController.js");
 var newController = require("./controllers/urlController.js");
-var statsController = require("./controllers/statsController.js");
 
 
 // Express config
