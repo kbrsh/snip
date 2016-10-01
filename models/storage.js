@@ -71,7 +71,7 @@ module.exports.seedDatabase = function() {
   });
 }
 
-// var spam = ["iqnnrk9", "i8me7b9", "2b21emi", "s5x9a4i", "lbu766r", "fcac3di", "9p8ehfr", "96vquxr", "eukgldi", "dtv5cdi", "v6rms4i", "wkit3xr", "q3bx1or", "vvuc8fr"]
+// var spam = []
 // for(var i = 0; i < spam.length; i++) {
 //   module.exports.getURL(spam[i]).then(function(url) {
 //     url.destroy();
