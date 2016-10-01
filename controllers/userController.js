@@ -13,7 +13,7 @@ module.exports = function(req, res) {
   res.header('Content-Type', 'application/json');
 
   if(req.user) {
-    res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#"), req.user.premium)));
+    res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, getGravatar(req.user.email), req.user.links.split("#"), req.user.premium)));
 
     // Log it
     util.log("[SNIP] Sending API stats for User", "green");
