@@ -45,7 +45,7 @@ app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: fals
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(
+passport.use(new Strategy(
   function(username, password, done) {
     storage.User.find({ username: username })
     .then(function(user) {
