@@ -2,8 +2,11 @@
 var express = require("express");
 var app = express();
 
-// Use bodyparser to parse form parameters
+// Express Helpers
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+
 
 // Get functions to validate url
 var validurl = require("./src/validurl.js");
@@ -30,11 +33,19 @@ var urlController = require("./controllers/urlController.js");
 
 
 // Express config
-
-// Use body parser
-app.use(bodyParser.urlencoded({extended: true}));
-// Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
+app.use(session({ secret: 'super-secret' }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 // GET '/'
