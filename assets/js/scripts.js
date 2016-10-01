@@ -82,9 +82,7 @@ if(document.getElementById("login")) {
   });
 }
 
-
 httpGet("/api/user", function(user) {
-  if(!user.error) {
-    document.getElementById("profile-pic").setAttribute("src", user.avatar);
-  }
+  var user = JSON.parse(user);
+  document.getElementById("profile-pic").src = user.avatar;
 });
