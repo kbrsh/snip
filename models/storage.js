@@ -115,7 +115,7 @@ User.create({
 module.exports.createUser = function(user) {
   User.create({
     username: user.username,
-    salt:
+    salt: crypto.randomBytes(128).toString('base64'),
   });
 }
 
