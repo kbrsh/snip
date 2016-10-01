@@ -24,9 +24,9 @@ var URL = sequelize.define('URL', {
 });
 
 var User = sequelize.define("User", {
-    id: { type: Sequelize.STRING(7), unique: true, primaryKey: true, autoIncrement: true },
+    id: { type: Sequelize.INTEGER, unique: true, primaryKey: true, autoIncrement: true },
     username: Sequelize.STRING,
-    email: Sequelize.STRING,
+    email: {type: Sequelize.STRING, unique: true},
     password: Sequelize.STRING,
     links: Sequelize.STRING,
     premium: Sequelize.BOOLEAN
@@ -120,7 +120,7 @@ module.exports.createUser = function(user) {
 }
 
 module.exports.createUser({
-  username: "hello",
+  username: "kbr",
   password: "123",
   email: "simplecooldude1@gmail.com"
 });
