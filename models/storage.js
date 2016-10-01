@@ -122,16 +122,11 @@ module.exports.getUser = function(username) {
   return User.find({where:{username: username}})
 }
 
-module.exports.createUser({
-  username: "shen",
-  password: "1234",
-  email: "cooldude.legacy@gmail.com"
-});
 
 module.exports.createUser({
-  username: "kbr",
-  password: "123",
-  email: "simplecooldude1@gmail.com"
+  username: "test",
+  password: "test",
+  email: "test@test.com"
 });
 
 
