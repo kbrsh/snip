@@ -2,8 +2,6 @@ var storage = require("../models/storage.js");
 var util = require("../src/util.js");
 var api = require("../src/api/api.js");
 
-module.exports.api = {};
-
 module.exports = function(req, res) {
    //  Get ID from URL
    var id = req.params.id;
