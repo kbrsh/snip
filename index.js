@@ -30,6 +30,7 @@ var Strategy = require('passport-local').Strategy;
 // Controllers
 var indexController = require("./controllers/indexController.js");
 var urlController = require("./controllers/urlController.js");
+var dashboardController = require("./controllers/dashboardController.js");
 
 
 // Express config
@@ -74,6 +75,8 @@ passport.deserializeUser(function(username, done) {
 // GET '/'
 app.get('/', indexController);
 
+// GET '/dashboard'
+app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn(), dashboardController);
 
 // POST "/login"
 app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
