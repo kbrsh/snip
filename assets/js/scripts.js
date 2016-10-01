@@ -82,6 +82,22 @@ if(document.getElementById("login")) {
   });
 }
 
+// Set error if present
+function getQueryVariable(variable) {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+
+if(getQueryVariable("error")) {
+  document.getElementById("error").innerHTML = getQueryVariable("error").split("space").join(" ");
+}
+
+
 httpGet("/api/user", function(user) {
   var user = JSON.parse(user);
   document.getElementById("profile-pic").src = user.avatar;
