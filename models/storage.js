@@ -22,6 +22,11 @@ var URL = sequelize.define('URL', {
     url: Sequelize.TEXT
 });
 
+var User = sequelize.define('User', {
+    id: { type: Sequelize.STRING(), unique: true, primaryKey: true },
+    password: Sequelize.STRING()
+});
+
 sequelize.sync();
 
 function randomStr() {
