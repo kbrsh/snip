@@ -81,3 +81,10 @@ if(document.getElementById("login")) {
     document.body.appendChild(loginModal);
   });
 }
+
+
+httpGet("/api/user", function(user) {
+  if(!user.error) {
+    document.getElementById("profile-pic").setAttribute("src", user.avatar);
+  }
+});
