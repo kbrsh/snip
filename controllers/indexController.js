@@ -1,4 +1,6 @@
+var path = require("path");
+
 module.exports = function(req, res) {
   // Send index.html file
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(path.resolve(__dirname + '/../views/index.html'));
 }

@@ -1,6 +1,7 @@
 var storage = require("../models/storage.js");
 var util = require("../src/util.js");
 var api = require("../src/api/api.js");
+var path = require("path");
 
 module.exports = function(req, res) {
    //  Get ID from URL
@@ -69,7 +70,7 @@ module.exports.stats = function(req, res) {
       } else {
         // Send stats.html if found
           res.header('Content-Type', 'text/html');
-          res.sendFile(__dirname + "/views/stats/stats.html");
+          res.sendFile(path.resolve(__dirname + "/../views/stats/stats.html"));
 
           // Log it
           util.log("[SNIP] Sending web stats for /" + id, "green");
