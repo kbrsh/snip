@@ -53,6 +53,8 @@ passport.use(new Strategy(
 // Express config
 // Use body parser
 app.use(bodyParser.urlencoded({extended: true}));
+// Cookie parser
+app.use(require('cookie-parser')());
 // Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
 
