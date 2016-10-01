@@ -118,6 +118,10 @@ module.exports.createUser = function(user) {
   });
 }
 
+module.exports.getUser = function(username) {
+  return User.find({username: username})
+}
+
 module.exports.createUser({
   username: "kbr",
   password: "123",
