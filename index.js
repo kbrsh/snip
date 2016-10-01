@@ -45,7 +45,7 @@ app.get('/:id/api', urlController.api.info);
 
 
 // GET '/:id/stats' and send stats
-app.get('/:id/stats', urlController.api.stats);
+app.get('/:id/stats', urlController.stats);
 
 
 // API Routes

@@ -59,7 +59,7 @@ module.exports.api.info = function(req, res) {
    });
 }
 
-module.exports.api.stats = function(req, res) {
+module.exports.stats = function(req, res) {
   // Get ID
    var id = req.params.id;
 
