@@ -1,4 +1,5 @@
 var Sequelize = require('sequelize');
+var passportLocalSequelize = require('passportLocalSequelize');
 var data = require('../data/data.js');
 var fs = require('fs');
 var sequelize = new Sequelize('database', 'username', 'password', {
@@ -20,6 +21,10 @@ var URL = sequelize.define('URL', {
     id: { type: Sequelize.STRING(7), unique: true, primaryKey: true },
     visits: Sequelize.INTEGER,
     url: Sequelize.TEXT
+});
+
+var User = passportLocalSequelize.defineUser(mydb, {
+    favoriteColor: Sequelize.STRING
 });
 
 sequelize.sync();
