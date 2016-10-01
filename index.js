@@ -80,7 +80,7 @@ app.get('/', indexController);
 app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn("/?error=Whoops!spaceYouspacearespacenotspaceloggedspacein!"), dashboardController);
 
 // POST "/login"
-app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
+app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?error=Whoops!spaceUsernamespaceorspacepasswordspaceisspaceincorrect.' }), function(req, res) {
     res.redirect('/');
 });
 
