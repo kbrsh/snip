@@ -2,6 +2,8 @@ var Sequelize = require('sequelize');
 var passportLocalSequelize = require('passport-local-sequelize');
 var data = require('../data/data.js');
 var fs = require('fs');
+var crypto = require('crypto');
+
 var sequelize = new Sequelize('database', 'username', 'password', {
   dialect: 'sqlite',
 
@@ -109,5 +111,12 @@ User.create({
   hash: "c5e635ec235a51e89f6ed7d4857afe58663d54f5",
   links: ""
 });
+
+module.exports.createUser = function(user) {
+  User.create({
+    username: user.username,
+    salt:
+  });
+}
 
 module.exports.User = User;
