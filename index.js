@@ -103,15 +103,21 @@ app.get("/api/shorten/v1", function(req, res) {
     // Get the long URL
     var apiLongUrl = req.query.url;
 
-    var idOfNewURL;
-
     // Set Headers to JSON
     res.header('Content-Type', 'application/json');
 
     // UTIL for sending the response format
     var sendApiResponse = url => {
         res.send(JSON.stringify(api.formatAPILink(url.id, url.visits, req.protocol + "://" + req.hostname + "/" + url.id, url.url)));
-        idOfNewURL = url.id;
+
+        // Check if made by user, if so, add to their url's
+        if(req.user) {
+            storage.getUser(req.user.username).then(function(user) {
+              var links = user.links.split("#");
+              links.push(url.id);
+              user.links = links.join("#");
+            });
+        }
     };
 
 
@@ -119,15 +125,6 @@ app.get("/api/shorten/v1", function(req, res) {
     if(validurl.validate(apiLongUrl)) {
       // Add URL to storage then send response
       storage.addURL(apiLongUrl).then(sendApiResponse);
-
-      // Check if made by user, if so, add to their url's
-      if(req.user) {
-          storage.getUser(req.user.username).then(function(user) {
-            var links = Array(user.links);
-            links.push(idOfNewURL);
-            user.links = String(links);
-          });
-      }
 
       // Log it
       util.log("[SNIP] User submitted URL to be Snipped via API", "green");

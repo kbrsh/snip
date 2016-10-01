@@ -113,7 +113,7 @@ module.exports.createUser = function(user) {
     username: user.username,
     email: user.email,
     password: user.password,
-    links: "[]",
+    links: "",
     premium: false
   });
 }
