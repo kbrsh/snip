@@ -49,6 +49,8 @@ app.get('/:id/api', urlController.api.info);
 app.get('/:id/stats', urlController.api.stats);
 
 
+// API Routes
+
 // API GET "/shorten/v1"
 app.get("/api/shorten/v1", function(req, res) {
     // Get the long URL
