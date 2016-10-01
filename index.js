@@ -55,6 +55,12 @@ passport.deserializeUser(storage.User.deserializeUser());
 app.get('/', indexController);
 
 
+// POST "/login"
+app.post('/login',  passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
+    res.redirect('/');
+});
+
+
 // GET '/:id'
 app.get('/:id', urlController);
 
