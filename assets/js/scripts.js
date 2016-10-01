@@ -48,17 +48,23 @@ function clearInput() {
 function check(e){
     var inputValue=document.getElementById('url').value;
     if(ValidURL(addhttp(inputValue)) && containsSelfURL(inputValue)) {
+
         document.getElementById('url').value = addhttp(inputValue);
+
         httpGet("/api/shorten/v1?url=" + document.getElementById("url").value, function(url) {
           if(!url.error) {
-            document.getElementById("success").style.opacity = "100";
             var urlObj = JSON.parse(url);
+            var successModal = document.createElement("div");
+            successModal.classList.add("modal");
+            successModal.innerHTML = "<div id='success' class='center'><p>Nice! Share it with your friends:</p> <input type='text' onClick='this.setSelectionRange(0, this.value.length)'' value='' readonly id='shortened-url'/></div>";
+            document.body.appendChild(successModal);
             document.getElementById("shortened-url").value = urlObj.shortURL;
             clearInput();
           } else {
             document.getElementById("error").innerHTML = "Nice try! The URL is still invalid!";
           }
         });
+
         return false;
     } else {
         document.getElementById("error").innerHTML = "Whoops! The URL is invalid!";
