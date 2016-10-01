@@ -31,8 +31,7 @@ var urlController = require("./controllers/urlController.js");
 // Setup auth
 passport.use(new Strategy(
   function(id, password, cb) {
-    storage.findUserById(id, function(err, user) {
-      if (err) { return cb(err); }
+    storage.findUserById(id, function(user) {
       if (!user) { return cb(null, false); }
       if (user.password != password) { return cb(null, false); }
       return cb(null, user);
