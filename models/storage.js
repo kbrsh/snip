@@ -1,8 +1,6 @@
 var Sequelize = require('sequelize');
-var passportLocalSequelize = require('passport-local-sequelize');
 var data = require('../data/data.js');
 var fs = require('fs');
-var crypto = require('crypto');
 
 var sequelize = new Sequelize('database', 'username', 'password', {
   dialect: 'sqlite',
@@ -25,9 +23,13 @@ var URL = sequelize.define('URL', {
     url: Sequelize.TEXT
 });
 
-var User = passportLocalSequelize.defineUser(sequelize, {
+var User = sequelize.define("User", {
+    id: { type: Sequelize.STRING(7), unique: true, primaryKey: true, autoIncrement: true },
+    username: Sequelize.STRING,
     email: Sequelize.STRING,
-    links: Sequelize.STRING
+    password: Sequelize.STRING,
+    links: Sequelize.STRING,
+    premium: Sequelize.BOOLEAN
 });
 
 sequelize.sync();
@@ -108,19 +110,17 @@ var allLinksToArray = function(req) {
 
 
 module.exports.createUser = function(user) {
-  var salt = crypto.randomBytes(128).toString('base64');
-  var key = crypto.pbkdf2Sync(user.password, salt, 100000, 512, 'sha512');
   User.create({
     username: user.username,
     email: user.email,
-    salt: salt,
-    hash: key,
-    links: ""
+    password: user.password,
+    links: "",
+    premium: false
   });
 }
 
 module.exports.createUser({
-  username: "kbr",
+  username: "hello",
   password: "123",
   email: "simplecooldude1@gmail.com"
 });
