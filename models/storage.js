@@ -104,6 +104,6 @@ var allLinksToArray = function(req) {
 // Users
 
 User.create({
-  username: "kbr",
+  username: "test",
   password: "123"
 });
