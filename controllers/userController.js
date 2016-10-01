@@ -8,5 +8,5 @@ module.exports = function(req, res) {
       return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
   }
 
-  res.send
+  res.header('Content-Type', 'application/json');
 }
