@@ -56,7 +56,7 @@ app.get('/', indexController);
 
 
 // POST "/login"
-app.post('/login',  passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
+app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
     res.redirect('/');
 });
 
