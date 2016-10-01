@@ -8,4 +8,4 @@ var formatUserAPI = function(username, email, links, premium) {
   }
 }
 
-module.exports = formatLinkAPI;
+module.exports = formatUserAPI;
