@@ -40,7 +40,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(session({ secret: 'super-secret' }));
+app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
 app.use(passport.initialize());
 app.use(passport.session());
