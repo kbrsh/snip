@@ -112,7 +112,7 @@ module.exports.createUser = function(user) {
   var key = crypto.pbkdf2Sync(user.password, salt, 100000, 512, 'sha512');
   User.create({
     username: user.username,
-    email: user.email
+    email: user.email,
     salt: salt,
     hash: key,
     links: ""
