@@ -29,15 +29,9 @@
 <body>
 	<div class="nav">
 		<a href="/" id="logo"><img src="./img/LogoTransparent.png"/></a>
-		<% if (!user) { %>
-			<div id="login">
-				<button class="btn btn-clear">Login</button>
-			</div>
-		<% } else { %>
-			<div id="dashboard">
-				<p>Hello, <%= user.username %></p>
-			</div>
-		<% } %>
+		<div id="login">
+			<button class="btn btn-clear">Login</button>
+		</div>
 
 	</div>
 	<section id="hero">
