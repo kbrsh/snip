@@ -1,3 +1,3 @@
 module.exports = function(req, res) {
-  res.render('profile', { user: req.user });
+  res.render('dashboard', { user: req.user });
 }
