@@ -76,7 +76,7 @@ function check(e){
 document.getElementById("login").addEventListener("click", function() {
   var loginModal = document.createElement("div");
   loginModal.classList.add("modal");
-  loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><form>
-  
+  loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><form action="/auth/login" method="POST">
+
   </form></div>`;
 });
