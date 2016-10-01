@@ -247,6 +247,10 @@ input[type=submit]:hover {
   margin-right: auto;
 }
 
+.dashboard-short-link {
+  margin-bottom: 3rem;
+}
+
 /*Footer Styles*/
 
 footer {

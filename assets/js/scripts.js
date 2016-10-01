@@ -81,3 +81,15 @@ if(document.getElementById("login")) {
     document.body.appendChild(loginModal);
   });
 }
+
+// Populate dashboard
+
+var dashboard_long_urls = document.getElementsByClassName("dashboard-long-url");
+for(var i = 0; i < dashboard_long_urls.length; i++) {
+  dashboard_long_url = dashboard_long_urls[i];
+  console.log(dashboard_long_url.parentElement.parentElement.parentElement.children[0].children[1].textContent.replace("snipit.ga/", ""))
+  httpGet("/" + dashboard_long_url.parentElement.parentElement.parentElement.children[0].children[1].textContent.replace("snipit.ga/", "") + "/api", function(url) {
+    dashboard_long_url.setAttribute("href", url.longURL);
+    dashboard_long_url.innerHTML = url.longURL;
+  });
+}
