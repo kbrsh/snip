@@ -22,12 +22,6 @@ var URL = sequelize.define('URL', {
     url: Sequelize.TEXT
 });
 
-var User = sequelize.define('User', {
-    id: { type: Sequelize.STRING(), unique: true, primaryKey: true },
-    password: Sequelize.STRING(),
-    links: Sequelize.STRING()
-});
-
 sequelize.sync();
 
 function randomStr() {
@@ -100,10 +94,4 @@ var allLinksToArray = function(req) {
        return allLinksArray;
     });
 
-}
-
-// Users
-
-module.exports.getUserById = function(id, cb) {
-  return User.findById(id);
 }

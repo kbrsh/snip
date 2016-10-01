@@ -21,45 +21,18 @@ var storage = require('./models/storage.js');
 var mail = require("./mail/mail.js");
 
 // Get auth methods
-
+var passport = require('passport');
+var Strategy = require('passport-local').Strategy;
 
 // Controllers
 var indexController = require("./controllers/indexController.js");
 var urlController = require("./controllers/urlController.js");
 
 
-// Setup auth
-passport.use(new Strategy(
-  function(id, password, cb) {
-    storage.findUserById(id).then(function(user) {
-      if (!user) { return cb(null, false); }
-      if (user.password != password) { return cb(null, false); }
-      return cb(null, user);
-    });
-  }));
-
-  passport.serializeUser(function(user, cb) {
-    cb(null, user.id);
-  });
-
-  passport.deserializeUser(function(id, cb) {
-    storage.findUserById(id).then(function (err, user) {
-      if (err) { return cb(err); }
-      cb(null, user);
-    });
-  });
-
-
 // Express config
+
 // Use body parser
 app.use(bodyParser.urlencoded({extended: true}));
-// Cookie parser
-app.use(require('cookie-parser')());
-// Session
-app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
-// Init Auth
-app.use(passport.initialize());
-app.use(passport.session());
 // Store static files in /assets
 app.use(express.static(__dirname + '/assets'));
 
