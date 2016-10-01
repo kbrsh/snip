@@ -188,7 +188,7 @@ app.get("/api/total", function(req, res) {
 });
 
 // API GET "/api/user/avatar" to get user's gravatar
-app.get('/api/user/avatar', require('connect-ensure-login').ensureLoggedIn(), userController.avatar);
+app.get('/api/user/avatar', require('connect-ensure-login').ensureLoggedIn(), userController);
 
 // Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function (req, res) {
