@@ -24,8 +24,7 @@ var URL = sequelize.define('URL', {
 });
 
 var User = sequelize.define("User", {
-    id: { type: Sequelize.INTEGER, unique: true, primaryKey: true, autoIncrement: true },
-    username: Sequelize.STRING,
+    username: { type: Sequelize.STRING, unique: true, primaryKey: true},
     email: {type: Sequelize.STRING, unique: true},
     password: Sequelize.STRING,
     links: Sequelize.STRING,
