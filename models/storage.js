@@ -119,8 +119,20 @@ module.exports.createUser = function(user) {
 }
 
 module.exports.getUser = function(username) {
-  return User.find({where: {username: username}})
+  return User.find({where:{username: username}})
 }
+
+module.exports.createUser({
+  username: "shen",
+  password: "1234",
+  email: "cooldude.legacy@gmail.com"
+});
+
+module.exports.createUser({
+  username: "kbr",
+  password: "123",
+  email: "simplecooldude1@gmail.com"
+});
 
 
 module.exports.User = User;
