@@ -71,3 +71,12 @@ function check(e){
         return false;
     }
 }
+
+// Show modal on login click
+document.getElementById("login").addEventListener("click", function() {
+  var loginModal = document.createElement("div");
+  loginModal.classList.add("modal");
+  loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><form>
+  
+  </form></div>`;
+});
