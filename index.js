@@ -45,7 +45,20 @@ app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: fals
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(storage.User.createStrategy());
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    storage.User.find({ username: username })
+    .then(function(user) {
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username or password.' });
+      } else {
+          if (user.password != password) {
+            return done(null, false, { message: 'Incorrect username or password.' });
+          }
+      }
+      return done(null, user);
+    });
+}));
 
 passport.serializeUser(storage.User.serializeUser());
 passport.deserializeUser(storage.User.deserializeUser());
