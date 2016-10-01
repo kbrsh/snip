@@ -77,7 +77,7 @@ passport.deserializeUser(function(username, done) {
 app.get('/', indexController);
 
 // GET '/dashboard'
-app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn("/?error=Whoops!%20You%20Are%20Not%20Logged%20In!"), dashboardController);
+app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn("/?error=Whoops!spaceYouspacearespacenotspaceloggedspacein!"), dashboardController);
 
 // POST "/login"
 app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/' }), function(req, res) {
