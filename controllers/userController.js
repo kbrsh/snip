@@ -1,3 +1,4 @@
-module.exports.getGravatar = function(req, res) {
-  
+
+module.exports.avatar = function(req, res) {
+    
 }

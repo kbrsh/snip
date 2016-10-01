@@ -31,6 +31,7 @@ var Strategy = require('passport-local').Strategy;
 var indexController = require("./controllers/indexController.js");
 var urlController = require("./controllers/urlController.js");
 var dashboardController = require("./controllers/dashboardController.js");
+var userController = require("./controllers/userController.js");
 
 
 // Express config
@@ -98,7 +99,6 @@ app.get('/:id/api', urlController.api);
 
 // GET '/:id/stats' and send stats
 app.get('/:id/stats', urlController.stats);
-
 
 // API Routes
 
@@ -187,6 +187,8 @@ app.get("/api/total", function(req, res) {
     });
 });
 
+// API GET "/api/user/avatar" to get user's gravatar
+app.get('/api/user/avatar', require('connect-ensure-login').ensureLoggedIn(), userController.avatar);
 
 // Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", function (req, res) {
