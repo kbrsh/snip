@@ -83,6 +83,10 @@ app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/' }
     res.redirect('/');
 });
 
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+});
 
 // GET '/:id'
 app.get('/:id', urlController);
