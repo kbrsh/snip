@@ -1,4 +1,5 @@
 var api = require("../src/api/api.js");
+var util = require("../src/util.js");
 
 module.exports = function(req, res) {
   // Function to get gravatar
@@ -12,4 +13,6 @@ module.exports = function(req, res) {
   res.header('Content-Type', 'application/json');
 
   res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#"), req.user.premium)));
+
+  // Log it
 }
