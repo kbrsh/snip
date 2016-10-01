@@ -12,7 +12,12 @@ module.exports = function(req, res) {
   // Set content type to JSON
   res.header('Content-Type', 'application/json');
 
-  res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#"), req.user.premium)));
+  if(req.user) {
+    res.send(JSON.stringify(api.formatAPIUser(req.user.username, req.user.email, req.user.links.split("#"), req.user.premium)));
 
-  // Log it
+    // Log it
+    util.log("[SNIP] Sending API stats for User", "green");
+  } else {
+    res.send(JSON.stringify(api.formatAPIError("ENOTAUTHORIZED", "No user is logged in")))
+  }
 }
