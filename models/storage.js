@@ -24,7 +24,7 @@ var URL = sequelize.define('URL', {
 });
 
 var User = passportLocalSequelize.defineUser(mydb, {
-    favoriteColor: Sequelize.STRING
+    links: Sequelize.STRING
 });
 
 sequelize.sync();
@@ -105,7 +105,8 @@ var allLinksToArray = function(req) {
 
 User.create({
   username: "test",
-  password: "123"
+  password: "123",
+  links: ""
 });
 
 module.exports.User = User;
