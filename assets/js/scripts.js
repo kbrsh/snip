@@ -56,7 +56,7 @@ function check(e){
             var urlObj = JSON.parse(url);
             var successModal = document.createElement("div");
             successModal.classList.add("modal");
-            successModal.innerHTML = `<div id='success' class='center'><div class='closeModal' onClick='this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)'><img src='./img/x.svg'/></div><p>Nice! Share it with your friends:</p> <input type='text' onClick='this.setSelectionRange(0, this.value.length)'' value='' readonly id='shortened-url'/></div>`;
+            successModal.innerHTML = "<div id='success' class='center'><div class='closeModal' onClick='this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)'><img src='./img/x.svg'/></div><p>Nice! Share it with your friends:</p> <input type='text' onClick='this.setSelectionRange(0, this.value.length)'' value='' readonly id='shortened-url'/></div>";
             document.body.appendChild(successModal);
             document.getElementById("shortened-url").value = urlObj.shortURL;
             clearInput();
@@ -77,7 +77,7 @@ if(document.getElementById("login")) {
   document.getElementById("login").addEventListener("click", function() {
     var loginModal = document.createElement("div");
     loginModal.classList.add("modal");
-    loginModal.innerHTML = `<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display="none"'><img src='./img/x.svg'/></div><h3 class="margin-bottom">Log In</h3><form action="/auth/login" method="POST" class="login-form"><input type="text" placeholder="USERNAME" name="username"/><input type="password" placeholder="PASSWORD" name="password"/><input type="submit"/></form></div>`;
+    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom'>Log In</h3><form action='/auth/login' method='POST' class='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form></div>";
     document.body.appendChild(loginModal);
   });
 }
