@@ -77,7 +77,7 @@ if(document.getElementById("login")) {
   document.getElementById("login").addEventListener("click", function() {
     var loginModal = document.createElement("div");
     loginModal.classList.add("modal");
-    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom'>Log In</h3><form action='/auth/login' method='POST' class='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear'>Don't have an account? Sign up!</button></div>";
+    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom'>Log In</h3><form action='/auth/login' method='POST' class='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
     document.body.appendChild(loginModal);
   });
 }
