@@ -85,7 +85,7 @@ app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?er
 });
 
 // POST "/auth/signup"
-app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?error=Whoops!spaceUsernamespaceorspacepasswordspaceisspaceincorrect.' }), function(req, res) {
+app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?error=Whoops!spaceThatspaceusernamespaceisspacetaken!' }), function(req, res) {
     res.redirect('/');
 });
 
