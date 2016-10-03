@@ -86,7 +86,8 @@ app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?er
 
 // POST "/auth/signup"
 app.post('/auth/signup', function(req, res) {
-  if(/^[a-zA-Z0-9_]+$/.test(req.body.username)) {
+  if(/^[a-zA-Z0-9_]+$/.test(req.body.username) && /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+.test(req.body.email)) {
     storage.createUser({
       username: req.body.username,
       password: req.body.password,
