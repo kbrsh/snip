@@ -108,14 +108,14 @@ var allLinksToArray = function(req) {
 // Users
 
 
-module.exports.createUser = function(user) {
+module.exports.createUser = function(user, cb) {
   User.create({
     username: user.username,
     email: user.email,
     password: user.password,
     links: "",
     premium: false
-  });
+  }).then((user) => {if(cb) {cb(user)}});
 }
 
 module.exports.getUser = function(username) {

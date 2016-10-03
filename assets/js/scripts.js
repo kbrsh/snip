@@ -104,6 +104,10 @@ if(getQueryVariable("error")) {
   document.getElementById("error").innerHTML = getQueryVariable("error").split("space").join(" ");
 }
 
+if(getQueryVariable("success")) {
+  document.getElementById("success").innerHTML = getQueryVariable("success").split("space").join(" ");
+}
+
 
 httpGet("/api/user", function(user) {
   var user = JSON.parse(user);
