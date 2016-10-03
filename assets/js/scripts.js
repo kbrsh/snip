@@ -84,7 +84,7 @@ if(document.getElementById("login")) {
       document.getElementById("login-form").action = "/auth/signup";
       document.getElementById("login-form").innerHTML = "<input type='text' placeholder='EMAIL' name='email'/><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/>"
       document.getElementById("login-modal-header").innerHTML = "SIGN UP";
-
+      this.parentElement.removeChild(this);
     });
   });
 }
