@@ -86,13 +86,17 @@ app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?er
 
 // POST "/auth/signup"
 app.post('/auth/signup', function(req, res) {
+  if(/^[a-zA-Z0-9_]+$/.test(req.body.username)) {
     storage.createUser({
       username: req.body.username,
       password: req.body.password,
       email: req.body.email
     }, function() {
-      res.redirect("/success=Nice!spaceNowspacelogspacein!")
+      res.redirect("/?success=Nice!spaceNowspacelogspacein!")
     });
+  } else {
+    res.redirect("/?error=Whoops!spaceThespaceenteredspaceinformationspaceisspaceinvalid!")
+  }
 });
 
 app.get('/logout', function(req, res){
