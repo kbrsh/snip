@@ -77,7 +77,7 @@ if(document.getElementById("login")) {
   document.getElementById("login").addEventListener("click", function() {
     var loginModal = document.createElement("div");
     loginModal.classList.add("modal");
-    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom' class='modal-header'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
+    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)'><img src='./img/x.svg'/></div><h3 class='margin-bottom' class='modal-header'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
     document.body.appendChild(loginModal);
 
     document.getElementById("sign-up-btn").addEventListener("click", function() {
