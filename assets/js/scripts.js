@@ -77,16 +77,19 @@ if(document.getElementById("login")) {
   document.getElementById("login").addEventListener("click", function() {
     var loginModal = document.createElement("div");
     loginModal.classList.add("modal");
-    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
+    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.style.display='none''><img src='./img/x.svg'/></div><h3 class='margin-bottom' class='modal-header'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
     document.body.appendChild(loginModal);
+
+    document.getElementById("sign-up-btn").addEventListener("click", function() {
+      document.getElementById("login-form").action = "/auth/signup";
+      document.getElementById("login-form").innerHTML = "<input type='text' placeholder='EMAIL' name='email'/><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/>"
+      var modalHeaders = document.getElementsByClassName("modal-header");
+      for(var i = 0; i < modalHeaders.length; i++) {
+        modalHeaders[i].innerHTML = "SIGN UP";
+      }
+    });
   });
 }
-
-if(document.getElementById("signup-btn")) new Promise(function(resolve, reject) {
-  document.getElementById("signup-btn").addEventListener("click", function() {
-    document.getElementById("login-form")
-  });
-});
 
 // Set error if present
 function getQueryVariable(variable) {
