@@ -183,13 +183,10 @@ input[type=submit]:hover {
 }
 
 #success {
-  color: #1098F7;
+  color: green;
+  font-size: 1.5rem;
 }
 
-#success p {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
 
 #shortened-url {
   border: 1px dotted #1098F7;
