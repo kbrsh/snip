@@ -90,8 +90,9 @@ app.post('/auth/signup', function(req, res) {
       username: req.body.username,
       password: req.body.password,
       email: req.body.email
+    }, function() {
+      res.redirect("/success=Nice!spaceNowspacelogspacein!")
     });
-    res.redirect('/');
 });
 
 app.get('/logout', function(req, res){
