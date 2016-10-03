@@ -86,6 +86,11 @@ app.post('/auth/login',  passport.authenticate('local', { failureRedirect: '/?er
 
 // POST "/auth/signup"
 app.post('/auth/signup', function(req, res) {
+    storage.createUser({
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email
+    });
     res.redirect('/');
 });
 
