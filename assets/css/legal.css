@@ -7,6 +7,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat-Bold";
+  font-size: 2.5rem;
+}
+
+p, ul, ol, li {
+  font-size: 1.5rem;
 }
 /* Navbar Styles */
 
@@ -61,4 +66,8 @@ footer a {
 footer a:hover {
   color: #1098F7;
   border-bottom: 2px solid #1098F7;
+}
+
+.container {
+  max-width: 700px;
 }
