@@ -262,12 +262,20 @@ input[type=submit]:hover {
 footer {
   color: #8F8F8F;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Montserrat-Regular";
   position: absolute;
   height: auto;
   padding: 1rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+
+  max-width: 500px;
 }
 
 
