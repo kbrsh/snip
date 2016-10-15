@@ -77,7 +77,7 @@ passport.deserializeUser(function(username, done) {
 app.get('/', indexController);
 
 app.get('/legal/terms', function(req, res) {
-  res.sendFile(__dirname + "/views/legal/terms.html")
+  res.sendFile(__dirname + "/views/legal.html")
 });
 
 // // GET '/dashboard'
