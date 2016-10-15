@@ -72,44 +72,44 @@ function check(e){
     }
 }
 
-// Show modal on login click
-if(document.getElementById("login")) {
-  document.getElementById("login").addEventListener("click", function() {
-    var loginModal = document.createElement("div");
-    loginModal.classList.add("modal");
-    loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)'><img src='./img/x.svg'/></div><h3 class='margin-bottom' id='login-modal-header'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
-    document.body.appendChild(loginModal);
-
-    document.getElementById("sign-up-btn").addEventListener("click", function() {
-      document.getElementById("login-form").action = "/auth/signup";
-      document.getElementById("login-form").innerHTML = "<input type='text' placeholder='EMAIL' name='email'/><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/>"
-      document.getElementById("login-modal-header").innerHTML = "SIGN UP";
-      this.parentElement.removeChild(this);
-    });
-  });
-}
-
-// Set error if present
-function getQueryVariable(variable) {
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-
-if(getQueryVariable("error")) {
-  document.getElementById("error").innerHTML = getQueryVariable("error").split("space").join(" ");
-}
-
-if(getQueryVariable("success")) {
-  document.getElementById("success").innerHTML = getQueryVariable("success").split("space").join(" ");
-}
-
-
-httpGet("/api/user", function(user) {
-  var user = JSON.parse(user);
-  document.getElementById("profile-pic").src = user.avatar;
-});
+// // Show modal on login click
+// if(document.getElementById("login")) {
+//   document.getElementById("login").addEventListener("click", function() {
+//     var loginModal = document.createElement("div");
+//     loginModal.classList.add("modal");
+//     loginModal.innerHTML = "<div class='center'><div class='closeModal' onClick='this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement)'><img src='./img/x.svg'/></div><h3 class='margin-bottom' id='login-modal-header'>Log In</h3><form action='/auth/login' method='POST' id='login-form'><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/></form><button class='btn btn-clear' id='sign-up-btn'>Don't have an account? Sign up!</button></div>";
+//     document.body.appendChild(loginModal);
+//
+//     document.getElementById("sign-up-btn").addEventListener("click", function() {
+//       document.getElementById("login-form").action = "/auth/signup";
+//       document.getElementById("login-form").innerHTML = "<input type='text' placeholder='EMAIL' name='email'/><input type='text' placeholder='USERNAME' name='username'/><input type='password' placeholder='PASSWORD' name='password'/><input type='submit'/>"
+//       document.getElementById("login-modal-header").innerHTML = "SIGN UP";
+//       this.parentElement.removeChild(this);
+//     });
+//   });
+// }
+//
+// // Set error if present
+// function getQueryVariable(variable) {
+//        var query = window.location.search.substring(1);
+//        var vars = query.split("&");
+//        for (var i=0;i<vars.length;i++) {
+//                var pair = vars[i].split("=");
+//                if(pair[0] == variable){return pair[1];}
+//        }
+//        return(false);
+// }
+//
+// if(getQueryVariable("error")) {
+//   document.getElementById("error").innerHTML = getQueryVariable("error").split("space").join(" ");
+// }
+//
+// if(getQueryVariable("success")) {
+//   document.getElementById("success").innerHTML = getQueryVariable("success").split("space").join(" ");
+// }
+//
+//
+// httpGet("/api/user", function(user) {
+//   var user = JSON.parse(user);
+//   document.getElementById("profile-pic").src = user.avatar;
+// });
