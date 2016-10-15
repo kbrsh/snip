@@ -76,6 +76,10 @@ passport.deserializeUser(function(username, done) {
 // GET '/'
 app.get('/', indexController);
 
+app.get('/legal/terms', function(req, res) {
+  res.sendFile(__dirname + "/views/legal/terms.html")
+});
+
 // // GET '/dashboard'
 // app.get('/dashboard', require('connect-ensure-login').ensureLoggedIn("/?error=Whoops!spaceYouspacearespacenotspaceloggedspacein!"), dashboardController);
 //
