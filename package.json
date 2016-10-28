@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingPixil/newsnip.git"
+    "url": "git+https://github.com/KingPixil/snip.git"
   },
   "author": "Kabir Shah",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KingPixil/newsnip/issues"
+    "url": "https://github.com/KingPixil/snip/issues"
   },
-  "homepage": "https://github.com/KingPixil/newsnip#readme",
+  "homepage": "https://github.com/KingPixil/snip#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "connect-ensure-login": "^0.1.1",
