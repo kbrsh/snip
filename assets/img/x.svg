@@ -1,7 +1,0 @@
-<svg width="725px" height="725px" viewBox="-112 -113 725 725" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs></defs>
-    <g id="X" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(250.000000, 250.000000) rotate(45.000000) translate(-250.000000, -250.000000) " stroke-linecap="square">
-        <path d="M250,-5.68434189e-14 L250,500" id="Line" stroke="#111111" stroke-width="10"></path>
-        <path d="M-5.68434189e-14,250 L500,250" id="Line" stroke="#111111" stroke-width="10"></path>
-    </g>
-</svg>
