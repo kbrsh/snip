@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Font-Name';
+  font-style: normal;
+  src: local('Font-Regular'), url(./Font-Regular.otf) format('opentype');
+}
