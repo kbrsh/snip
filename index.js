@@ -1,5 +1,8 @@
 var express = require('express');
+
 var log = require("./src/log.js");
+var model = require("./model/model.js");
+
 var app = express();
 
 app.use(express.static('assets'));
