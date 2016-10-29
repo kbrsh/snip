@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingPixil/snip.git"
+    "url": "https://github.com/KingPixil/snip.git"
   },
   "author": "Kabir Shah",
   "license": "MIT",
@@ -20,19 +20,7 @@
   "homepage": "https://github.com/KingPixil/snip#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "connect-ensure-login": "^0.1.1",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "express-session": "^1.14.1",
-    "hexu": "^1.0.0",
-    "nodemailer": "^2.6.4",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
-    "sequelize": "^3.23.6",
-    "sqlite3": "^3.1.4"
-  },
-  "devDependencies": {
-    "nodemon": "^1.10.0"
+    "hexu": "^1.0.0"
   }
 }
