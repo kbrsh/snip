@@ -22,7 +22,14 @@ app.post('/api/new', (req, res) => {
       baseURL: req.protocol + '://' + req.get('host'),
       longURL: newURL
     }, (url) => {
-      res.send(JSON.stringify(url));
+      res.send(JSON.stringify({
+        id: url.id,
+        shortURL: url.shortURL,
+        longURL: url.longURL,
+        stats: {
+          visits: url.stats.visits
+        }
+      }));
     });
   } else {
     res.send(JSON.stringify({
