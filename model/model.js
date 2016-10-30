@@ -43,6 +43,8 @@ module.exports.getURL = (id, cb) => {
     if (err) throw err;
 
     log("==> 📝 Get URL: " + id, "green");
+
+    cb(url);
   });
 }
 
