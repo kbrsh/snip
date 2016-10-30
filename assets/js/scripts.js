@@ -32,7 +32,7 @@ function valid(value) {
 document.getElementById("submit").addEventListener("click", function() {
   var longURL = document.getElementById("url").value;
   if(valid(longURL)) {
-    postReq("api/new", document.getElementById("url").value, function(data) {
+    postReq("api/new", longURL, function(data) {
 
     });
   } else {
