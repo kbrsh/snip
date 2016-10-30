@@ -38,9 +38,11 @@ module.exports.addURL = (opts, cb) => {
   cb(newURL);
 }
 
+module.exports
+
 
 module.exports.visitURL(id, cb) {
-  url.find({ id: id }, function(err, url) {
+  url.findOne({ id: id }, function(err, url) {
     if (err) throw err;
 
     url.stats.visits++;
