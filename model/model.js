@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var random = require("./src/random.js");
+var log = require("./src/log.js");
 
 var Schema = mongoose.Schema;
 
@@ -17,9 +18,17 @@ var url = new Schema({
 
 
 module.exports.addURL = (opts, cb) => {
-  var chris = new User({
-    name: 'Chris',
-    username: 'sevilayha',
-    password: 'password'
+  var newURL = new url({
+    id: random(),
+    shortURL: opts.shortURL,
+    longURL: opts.longURL,
+    stats: {
+      visits: opts.visits
+    }
+  });
+
+  newURL.save(function(err) {
+    if (err) throw err;
+    log("==> 📝 Made URL: ", "green");
   });
 }
