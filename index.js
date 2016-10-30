@@ -25,7 +25,9 @@ app.post('/api/new', (req, res) => {
       res.send(JSON.stringify(url));
     });
   } else {
-    
+    res.send(JSON.stringify({
+      error: "EINVALID: The reqested URL is invalid."
+    }));
   }
 });
 
