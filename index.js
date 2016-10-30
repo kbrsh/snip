@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
 
 app.get('/:id', (req, res) => {
   var id = req.params.id;
+
+  model.getURL(id, (url) => {
+
+  });
 });
 
 app.post('/api/new', (req, res) => {
