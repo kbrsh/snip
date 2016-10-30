@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.post('/api/new', (req, res) => {
+app.get('/api/new', (req, res) => {
   res.header('Content-Type', 'application/json');
-  var newURL = req.body.url;
+  var newURL = req.query.url;
   if(valid(newURL)) {
     model.addURL({
       baseURL: req.protocol + '://' + req.get('host'),
@@ -36,6 +36,22 @@ app.post('/api/new', (req, res) => {
       error: "EINVALID: The reqested URL is invalid."
     }));
   }
+});
+
+app.get('/:id/api', (req, res) => {
+  var id = req.params.id;
+  model.getURL(id, (url) => {
+    if(url) {
+      res.send(JSON.stringify({
+        id: url.id,
+        shortURL: url.shortURL,
+        longURL: url.longURL,
+        stats: {
+          visits: url.stats.visits
+        }
+      }));
+    }
+  });
 });
 
 app.get('/:id', (req, res) => {

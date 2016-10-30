@@ -51,9 +51,13 @@ module.exports.visitURL = (id, cb) => {
   url.findOne({ id: id }, (err, url) => {
     if (err) throw err;
 
-    url.stats.visits++;
+    url.stats.visits = url.stats.visits + 1;
 
-    log("==> 📝 Updated URL Visits: " + id, "green");
+    newURL.save(function(err) {
+      if (err) throw err;
+      log("==> 📝 Updated URL Visits: " + id, "green");
+    });
+    
     if(cb) {
       cb(url);
     }
