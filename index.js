@@ -16,8 +16,9 @@ app.get('/', (req, res) => {
 app.post('/api/new', (req, res) => {
   model.addURL({
     baseURL: req.protocol + '://' + req.get('host'),
-    longURL: req.body.
+    longURL: req.body.url
   }, (url) => {
+    res.send(JSON.stringify(url));
   });
 });
 
