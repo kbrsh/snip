@@ -32,6 +32,24 @@ body {
   text-align: center;
 }
 
+#close-modal {
+  background: transparent;
+  border: none;
+  top: 5%;
+  right: 5%;
+  position: fixed;
+}
+
+#close-modal:hover {
+  background: transparent;
+  border: none;
+}
+
+#close-modal img {
+  height: 50px;
+  width: 50px;
+}
+
 #error {
   color: #E82F22;
 }
