@@ -13,6 +13,11 @@ var url = new Schema({
   }
 });
 
-module.exports.addURL = (opts, cb) => {
 
+module.exports.addURL = (opts, cb) => {
+  var chris = new User({
+    name: 'Chris',
+    username: 'sevilayha',
+    password: 'password'
+  });
 }
