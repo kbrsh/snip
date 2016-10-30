@@ -36,6 +36,7 @@ app.get('/:id', (req, res) => {
 
   model.getURL(id, (url) => {
     if(url) {
+      model.visitURL(id);
       res.redirect(url.longURL);
     }
   });
