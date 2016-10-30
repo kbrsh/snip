@@ -32,8 +32,19 @@ module.exports.addURL = (opts, cb) => {
 
   newURL.save(function(err) {
     if (err) throw err;
-    log("==> 📝 Made URL: ", "green");
+    log("==> 📝 Made URL: " + randId, "green");
   });
 
   cb(newURL);
+}
+
+
+module.exports.visitURL(id, cb) {
+  url.find({ id: id }, function(err, url) {
+    if (err) throw err;
+
+    url.stats.visits++;
+
+    log("==> 📝 Updated URL Visits: ", "green");
+  });
 }
