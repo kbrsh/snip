@@ -17,12 +17,16 @@ app.get('/', (req, res) => {
 app.post('/api/new', (req, res) => {
   res.header('Content-Type', 'application/json');
   var newURL = req.body.url;
-  model.addURL({
-    baseURL: req.protocol + '://' + req.get('host'),
-    longURL: newURL
-  }, (url) => {
-    res.send(JSON.stringify(url));
-  });
+  if(valid(newURL)) {
+    model.addURL({
+      baseURL: req.protocol + '://' + req.get('host'),
+      longURL: newURL
+    }, (url) => {
+      res.send(JSON.stringify(url));
+    });
+  } else {
+    
+  }
 });
 
 // Listen
