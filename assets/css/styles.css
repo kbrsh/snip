@@ -3,3 +3,8 @@
 #hero .container {
   flex-direction: column;
 }
+
+#submit {
+  width: 100%;
+  margin-left: 0;
+}
