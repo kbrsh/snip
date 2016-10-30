@@ -38,7 +38,7 @@ module.exports.addURL = (opts, cb) => {
   cb(newURL);
 }
 
-module.exports
+// module.exports.getURL(id, cb)
 
 
 module.exports.visitURL(id, cb) {
