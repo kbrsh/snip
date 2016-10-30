@@ -12,3 +12,7 @@ var url = new Schema({
     visits: Number
   }
 });
+
+module.exports.addURL = (opts) => {
+  
+}
