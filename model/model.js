@@ -54,7 +54,8 @@ module.exports.visitURL = (id, cb) => {
     url.stats.visits++;
 
     log("==> 📝 Updated URL Visits: " + id, "green");
-
-    cb(url);
+    if(cb) {
+      cb(url);
+    }
   });
 }
