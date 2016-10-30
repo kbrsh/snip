@@ -13,6 +13,6 @@ var url = new Schema({
   }
 });
 
-module.exports.addURL = (opts) => {
-  
+module.exports.addURL = (opts, cb) => {
+
 }
