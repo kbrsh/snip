@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/new', (req, res) => {
   model.addURL({
-
+    baseURL: req.protocol + '://' + req.get('host')
   }, (url) => {
 
   });
