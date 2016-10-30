@@ -23,7 +23,7 @@ module.exports.addURL = (opts, cb) => {
   var randId = random();
   var newURL = new url({
     id: randId,
-    shortURL: opts.baseURL + randId,
+    shortURL: opts.baseURL + "/" + randId,
     longURL: opts.longURL,
     stats: {
       visits: 0
@@ -41,8 +41,6 @@ module.exports.addURL = (opts, cb) => {
 module.exports.getURL = (id, cb) => {
   url.findOne({id:id}, (err, url) => {
     if (err) throw err;
-
-    log("==> 📝 Get URL: " + id, "green");
 
     cb(url);
   });
