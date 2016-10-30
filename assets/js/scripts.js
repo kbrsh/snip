@@ -33,8 +33,10 @@ document.getElementById("submit").addEventListener("click", function() {
   var longURL = document.getElementById("url").value;
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
-      var modal = document.getElementById("modal");
+      var modal = document.getElementById("shortened-modal");
       var shortened_url = document.getElementById("shortened-url");
+      modal.style.display = "block";
+      shortened_url.value = data.shortURL;
     });
   } else {
     document.getElementById("error").innerHTML = "That URL is invalid!";
