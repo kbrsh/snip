@@ -34,7 +34,7 @@ document.getElementById("submit").addEventListener("click", function() {
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
       var modal = document.getElementById("modal");
-      
+      var shortened_url = document.getElementById("shortened-url");
     });
   } else {
     document.getElementById("error").innerHTML = "That URL is invalid!";
