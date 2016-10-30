@@ -1,4 +1,4 @@
-module.exports.randomStr = () => {
+module.exports = () => {
     var tempStr = Math.random().toString(36).slice(-7);
     if(tempStr.length !== 7) {
         randomStr();
