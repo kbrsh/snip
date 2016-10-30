@@ -37,6 +37,7 @@ document.getElementById("submit").addEventListener("click", function() {
       var shortened_url = document.getElementById("shortened-url");
       modal.style.display = "flex";
       shortened_url.value = data.shortURL;
+      document.getElementById("url").value = "";
     });
   } else {
     document.getElementById("error").innerHTML = "That URL is invalid!";
