@@ -7,7 +7,6 @@ var model = require("./model/model.js");
 var app = express();
 
 app.use(express.static('assets'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
@@ -17,9 +16,8 @@ app.get('/', (req, res) => {
 app.post('/api/new', (req, res) => {
   model.addURL({
     baseURL: req.protocol + '://' + req.get('host'),
-    longURL:
+    longURL: req.body.
   }, (url) => {
-
   });
 });
 
