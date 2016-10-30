@@ -1,1 +1,5 @@
 /*Styles*/
+
+#hero .container {
+  flex-direction: column;
+}
