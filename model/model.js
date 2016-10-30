@@ -41,7 +41,7 @@ module.exports.addURL = (opts, cb) => {
 // module.exports.getURL(id, cb)
 
 
-module.exports.visitURL(id, cb) {
+module.exports.visitURL = (id, cb) => {
   url.findOne({ id: id }, function(err, url) {
     if (err) throw err;
 
