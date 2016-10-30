@@ -30,7 +30,12 @@ function valid(value) {
 }
 
 document.getElementById("submit").addEventListener("click", function() {
-  postReq("api/new", document.getElementById("url").value, function(data) {
-    
-  });
+  var longURL = document.getElementById("url").value;
+  if(valid(longURL)) {
+    postReq("api/new", document.getElementById("url").value, function(data) {
+
+    });
+  } else {
+    document.getElementById("error").innerHTML = "That URL is invalid!";
+  }
 });
