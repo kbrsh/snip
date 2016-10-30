@@ -38,6 +38,18 @@ app.get('/api/new', (req, res) => {
   }
 });
 
+
+app.get('/:id', (req, res) => {
+  var id = req.params.id;
+
+  model.getURL(id, (url) => {
+    if(url) {
+      model.visitURL(id);
+      res.redirect(url.longURL);
+    }
+  });
+});
+
 app.get('/:id/api', (req, res) => {
   var id = req.params.id;
   model.getURL(id, (url) => {
@@ -50,17 +62,6 @@ app.get('/:id/api', (req, res) => {
           visits: url.stats.visits
         }
       }));
-    }
-  });
-});
-
-app.get('/:id', (req, res) => {
-  var id = req.params.id;
-
-  model.getURL(id, (url) => {
-    if(url) {
-      model.visitURL(id);
-      res.redirect(url.longURL);
     }
   });
 });
