@@ -42,3 +42,7 @@ document.getElementById("submit").addEventListener("click", function() {
     document.getElementById("error").innerHTML = "That URL is invalid!";
   }
 });
+
+document.getElementById("close-modal").addEventListener("click", function() {
+
+});
