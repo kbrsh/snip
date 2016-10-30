@@ -42,7 +42,7 @@ module.exports.getURL = (id, cb) => {
   url.findOne({id:id}, (err, url) => {
     if (err) throw err;
 
-    log("==> 📝 Get URL: ", "green");
+    log("==> 📝 Get URL: " + id, "green");
   });
 }
 
