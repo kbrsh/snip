@@ -35,7 +35,7 @@ document.getElementById("submit").addEventListener("click", function() {
     postReq("api/new", longURL, function(data) {
       var modal = document.getElementById("shortened-modal");
       var shortened_url = document.getElementById("shortened-url");
-      modal.style.display = "block";
+      modal.style.display = "flex";
       shortened_url.value = data.shortURL;
     });
   } else {
