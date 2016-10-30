@@ -11,8 +11,12 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get('/api/new', (req, res) => {
+app.post('/api/new', (req, res) => {
+  model.addURL({
 
+  }, (url) => {
+
+  });
 });
 
 // Listen
