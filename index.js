@@ -14,14 +14,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get('/:id', (req, res) => {
-  var id = req.params.id;
-
-  model.getURL(id, (url) => {
-    res.redirect(url.longURL);
-  });
-});
-
 app.post('/api/new', (req, res) => {
   res.header('Content-Type', 'application/json');
   var newURL = req.body.url;
@@ -37,6 +29,16 @@ app.post('/api/new', (req, res) => {
       error: "EINVALID: The reqested URL is invalid."
     }));
   }
+});
+
+app.get('/:id', (req, res) => {
+  var id = req.params.id;
+
+  model.getURL(id, (url) => {
+    if(url) {
+      res.redirect(url.longURL);
+    }
+  });
 });
 
 // Listen
