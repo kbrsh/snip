@@ -50,8 +50,8 @@ app.get('/:id', (req, res) => {
   });
 });
 
-app.post('/:id/api', (req, res) => {
-  var id = req.body.id;
+app.get('/:id/api', (req, res) => {
+  var id = req.params.id;
   model.getURL(id, (url) => {
     if(url) {
       res.send(JSON.stringify({
