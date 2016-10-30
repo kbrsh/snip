@@ -23,3 +23,7 @@ body {
   display: none;
   z-index: 1000;
 }
+
+#error {
+  color: #E82F22;
+}
