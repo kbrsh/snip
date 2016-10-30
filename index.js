@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:id', (req, res) => {
-  
+  var id = req.params.id;
 });
 
 app.post('/api/new', (req, res) => {
