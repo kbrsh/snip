@@ -19,7 +19,7 @@ function postReq(url, param, callback) {
 
   http.onreadystatechange = function() {//Call a function when the state changes.
     if(http.readyState == 4 && http.status == 200) {
-        alert(http.responseText);
+        callback(JSON.parse(http.responseText));
     }
   }
   http.send(params);
@@ -30,5 +30,7 @@ function valid(value) {
 }
 
 document.getElementById("submit").addEventListener("click", function() {
-
+  postReq("api/new", document.getElementById("url").value, function(data) {
+    
+  });
 });

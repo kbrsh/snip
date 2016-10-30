@@ -14,9 +14,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get('/api/new', (req, res) => {
+app.post('/api/new', (req, res) => {
   res.header('Content-Type', 'application/json');
-  var newURL = req.query.url;
+  var newURL = req.body.url;
   if(valid(newURL)) {
     model.addURL({
       baseURL: req.protocol + '://' + req.get('host'),
