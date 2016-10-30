@@ -44,5 +44,5 @@ document.getElementById("submit").addEventListener("click", function() {
 });
 
 document.getElementById("close-modal").addEventListener("click", function() {
-
+  document.getElementById("shortened-modal").style.display = "none";
 });
