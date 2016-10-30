@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var log = require("./src/log.js");
 var model = require("./model/model.js");
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 app.post('/api/new', (req, res) => {
   model.addURL({
     baseURL: req.protocol + '://' + req.get('host'),
-    longURL: 
+    longURL:
   }, (url) => {
 
   });
