@@ -33,7 +33,8 @@ document.getElementById("submit").addEventListener("click", function() {
   var longURL = document.getElementById("url").value;
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
-
+      var modal = document.getElementById("modal");
+      
     });
   } else {
     document.getElementById("error").innerHTML = "That URL is invalid!";
