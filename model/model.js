@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var random = require("./src/random.js");
-var log = require("./src/log.js");
+var random = require("../src/random.js");
+var log = require("../src/log.js");
 
 var Schema = mongoose.Schema;
 
@@ -20,12 +20,13 @@ var url = mongoose.model('url', urlSchema);
 
 
 module.exports.addURL = (opts, cb) => {
+  var randId = random();
   var newURL = new url({
-    id: random(),
-    shortURL: opts.shortURL,
+    id: randId,
+    shortURL: opts.baseURL + randId,
     longURL: opts.longURL,
     stats: {
-      visits: opts.visits
+      visits: 0
     }
   });
 
@@ -33,4 +34,6 @@ module.exports.addURL = (opts, cb) => {
     if (err) throw err;
     log("==> 📝 Made URL: ", "green");
   });
+
+  cb(newURL);
 }
