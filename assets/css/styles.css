@@ -22,6 +22,14 @@ body {
   opacity: 0.98;
   display: none;
   z-index: 1000;
+  text-align: center;
+}
+
+#shortened-url {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 #error {
