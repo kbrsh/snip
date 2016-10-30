@@ -48,5 +48,7 @@ module.exports.visitURL(id, cb) {
     url.stats.visits++;
 
     log("==> 📝 Updated URL Visits: ", "green");
+
+    cb(url);
   });
 }
