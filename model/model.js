@@ -40,7 +40,7 @@ module.exports.addURL = (opts, cb) => {
 
 module.exports.getURL = (id, cb) => {
   url.findOne({id:id}, (err, url) => {
-    
+    if (err) throw err;
   });
 }
 
