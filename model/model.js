@@ -53,11 +53,11 @@ module.exports.visitURL = (id, cb) => {
 
     url.stats.visits = url.stats.visits + 1;
 
-    newURL.save(function(err) {
+    url.save(function(err) {
       if (err) throw err;
       log("==> 📝 Updated URL Visits: " + id, "green");
     });
-    
+
     if(cb) {
       cb(url);
     }
