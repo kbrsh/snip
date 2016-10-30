@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var random = require("./src/random.js");
+
 var Schema = mongoose.Schema;
 
 var mongo_url = process.env.OPENSHIFT_MONGODB_DB_URL || "mongodb://localhost/snip"
