@@ -41,6 +41,8 @@ module.exports.addURL = (opts, cb) => {
 module.exports.getURL = (id, cb) => {
   url.findOne({id:id}, (err, url) => {
     if (err) throw err;
+
+    log("==> 📝 Get URL: ", "green");
   });
 }
 
@@ -51,7 +53,7 @@ module.exports.visitURL = (id, cb) => {
 
     url.stats.visits++;
 
-    log("==> 📝 Updated URL Visits: ", "green");
+    log("==> 📝 Updated URL Visits: " + id, "green");
 
     cb(url);
   });
