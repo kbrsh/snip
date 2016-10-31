@@ -5,7 +5,7 @@ var log = require("../src/log.js");
 var Schema = mongoose.Schema;
 
 var mongo_url = process.env.OPENSHIFT_MONGODB_DB_URL || "mongodb://localhost/snip"
-mongoose.connect('mongodb://localhost:27017/snip');
+mongoose.connect(mongo_url);
 
 var urlSchema = new Schema({
   id: { type: String, required: true, unique: true },
