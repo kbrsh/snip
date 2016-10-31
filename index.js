@@ -66,6 +66,10 @@ app.get('/:id/api', (req, res) => {
   });
 });
 
+app.get('*', function(req, res){
+  res.send('404 Not Found', 404);
+});
+
 // Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", (req, res) => {
   log("======= ✂️ Snip ✂️ =======", "blue");
