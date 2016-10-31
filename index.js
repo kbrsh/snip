@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 
 var log = require("./src/log.js");
 var valid = require("./src/valid.js");
+var notFound = require("./src/404.js");
 var model = require("./model/model.js");
 
 var app = express();
