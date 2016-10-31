@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-  res.send("404 Not Found", 404);
+  res.status(404).send("404 Not Found");
 }
