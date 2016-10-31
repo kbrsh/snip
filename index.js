@@ -47,6 +47,8 @@ app.get('/:id', (req, res) => {
     if(url) {
       model.visitURL(id);
       res.redirect(url.longURL);
+    } else {
+      notFound(req, res);
     }
   });
 });
