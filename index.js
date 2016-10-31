@@ -65,6 +65,8 @@ app.get('/:id/api', (req, res) => {
           visits: url.stats.visits
         }
       }));
+    } else {
+      notFound(req, res);
     }
   });
 });
