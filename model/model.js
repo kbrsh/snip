@@ -66,4 +66,8 @@ module.exports.visitURL = (id, cb) => {
 
 module.exports.getAll = () => {
   var allLinks = [];
+
+  url.find({}, (err, data) => {
+
+  });
 }
