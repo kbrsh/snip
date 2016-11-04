@@ -38,7 +38,7 @@ function addProtocol(url) {
 }
 
 document.getElementById("submit").addEventListener("click", function() {
-  var longURL = document.getElementById("url").value;
+  var longURL = addProtocol(document.getElementById("url").value);
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
       var modal = document.getElementById("shortened-modal");
