@@ -30,6 +30,10 @@ p {
 
 /*Form*/
 
+input[type=text] {
+  
+}
+
 #submit {
   width: 100%;
   margin-left: 0;
