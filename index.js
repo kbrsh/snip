@@ -55,6 +55,8 @@ app.get('/:id', (req, res) => {
 
 app.get('/:id/api', (req, res) => {
   var id = req.params.id;
+  res.header('Content-Type', 'application/json');
+  
   model.getURL(id, (url) => {
     if(url) {
       res.send(JSON.stringify({
@@ -72,7 +74,6 @@ app.get('/:id/api', (req, res) => {
 });
 
 app.get("/api/links", (req, res) => {
-  
 
 });
 
