@@ -33,7 +33,7 @@
       <p>dead simple url shortener</p>
       <p id="error"></p>
       <div id="form">
-        <input type="text" id="url" name="url"/>
+        <input type="text" id="url" name="url" onkeydown="if(event.keyCode == 13)document.getElementById('submit').click()"/>
         <button id="submit">Shorten</button>
       </div>
     </div>
