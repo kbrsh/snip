@@ -75,6 +75,8 @@ app.get('/:id/api', (req, res) => {
 
 app.get("/api/links", (req, res) => {
   res.header('Content-Type', 'application/json');
+
+  res.send(JSON.stringify(model.getAll()));
 });
 
 
