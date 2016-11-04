@@ -30,7 +30,7 @@ p {
 
 /*Form*/
 
-input[type=text] {
+.text-input {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -41,7 +41,7 @@ input[type=text] {
   font-size: 1.5rem;
 }
 
-input[type=text]:focus {
+.text-input:focus {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -67,16 +67,16 @@ input[type=text]:focus {
   font-size: 1.5rem;
 }
 
-input[type=text]:focus::-webkit-input-placeholder {
+.text-input:focus::-webkit-input-placeholder {
   color: #2CF6B3;
 }
-input[type=text]:focus::-moz-placeholder {
+.text-input:focus::-moz-placeholder {
   color: #2CF6B3;
 }
-input[type=text]:focus:-ms-input-placeholder {
+.text-input:focus:-ms-input-placeholder {
   color: #2CF6B3;
 }
-input[type=text]:focus:-moz-placeholder {
+.text-input:focus:-moz-placeholder {
   color: #2CF6B3;
 }
 
