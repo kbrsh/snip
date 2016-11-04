@@ -55,7 +55,7 @@ module.exports.visitURL = (id, cb) => {
 
     url.save(function(err) {
       if (err) throw err;
-      log("==> 📝 Updated URL Visits: " + id, "green");
+      log("==> 📈 Updated URL Visits: " + id, "green");
     });
 
     if(cb) {
