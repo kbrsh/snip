@@ -80,6 +80,7 @@ module.exports.getAll = (cb) => {
       }
       allLinks.push(apiURL);
     }
+    log("==> 📂 Got all URLs")
     cb(allLinks);
   });
 
