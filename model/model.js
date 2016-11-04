@@ -63,3 +63,7 @@ module.exports.visitURL = (id, cb) => {
     }
   });
 }
+
+module.exports.getAll = () => {
+  
+}
