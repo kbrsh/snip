@@ -1,5 +1,17 @@
 @font-face {
-  font-family: 'Font-Name';
+  font-family: 'Montserrat';
   font-style: normal;
-  src: local('Font-Regular'), url(./Font-Regular.otf) format('opentype');
+  src: local('Montserrat-Regular'), url(./Montserrat-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  src: local('Montserrat-Bold'), url(./Montserrat-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  font-style: normal;
+  src: local('Montserrat-UltraLight'), url(./Montserrat-UltraLight.otf) format('opentype');
 }
