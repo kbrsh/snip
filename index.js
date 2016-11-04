@@ -72,8 +72,8 @@ app.get('/:id/api', (req, res) => {
 });
 
 app.get("/api/links", (req, res) => {
-  var allLinks = [];
   
+
 });
 
 
