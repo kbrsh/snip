@@ -15,6 +15,10 @@ h1 {
   color: #1098F7;
 }
 
+p {
+  color: #111111;
+}
+
 
 #hero .container {
   flex-direction: column;
