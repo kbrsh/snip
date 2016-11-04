@@ -68,6 +68,17 @@ module.exports.getAll = () => {
   var allLinks = [];
 
   url.find({}, (err, data) => {
-
+    for(var i = 0; i < data.length; i++) {
+      var selectedURL = data[i];
+      var apiURL = {
+        id: selectedURL.id,
+        shortURL: selectedURL.shortURL,
+        longURL: selectedURL.longURL,
+        stats: {
+          visits: selectedURL.stats.visits
+        }
+      }
+      allLinks.push(apiURL);
+    }
   });
 }
