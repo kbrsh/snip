@@ -47,6 +47,19 @@ input[type=text]:focus {
   border-bottom: 3px solid #2CF6B3;
 }
 
+::-webkit-input-placeholder {
+  color: #111111;
+}
+::-moz-placeholder {
+  color: #111111;
+}
+:-ms-input-placeholder {
+  color: #111111;
+}
+:-moz-placeholder {
+  color: #111111;
+}
+
 input[type=text]:focus::-webkit-input-placeholder {
   color: #2CF6B3;
 }
