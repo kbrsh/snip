@@ -137,6 +137,8 @@ button {
 
 #error {
   color: #E82F22;
+  position: absolute;
+  top: 5%;
 }
 
 
