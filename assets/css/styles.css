@@ -49,15 +49,19 @@ input[type=text]:focus {
 
 ::-webkit-input-placeholder {
   color: #111111;
+  font-size: 1.5rem;
 }
 ::-moz-placeholder {
   color: #111111;
+  font-size: 1.5rem;
 }
 :-ms-input-placeholder {
   color: #111111;
+  font-size: 1.5rem;
 }
 :-moz-placeholder {
   color: #111111;
+  font-size: 1.5rem;
 }
 
 input[type=text]:focus::-webkit-input-placeholder {
