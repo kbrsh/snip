@@ -79,6 +79,10 @@ input[type=text]:focus:-moz-placeholder {
   color: #2CF6B3;
 }
 
+button {
+  
+}
+
 #submit {
   width: 100%;
   margin-left: 0;
