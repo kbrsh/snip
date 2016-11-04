@@ -81,4 +81,6 @@ module.exports.getAll = () => {
       allLinks.push(apiURL);
     }
   });
+
+  return allLinks;
 }
