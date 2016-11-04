@@ -35,11 +35,16 @@ input[type=text] {
   border-left: none;
   border-right: none;
   border-radius: 0;
+  border-bottom: 3px solid #111;
   background: none;
 }
 
 input[type=text]:focus {
-  
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  border-bottom: 3px solid #2CF6B3;
 }
 
 #submit {
