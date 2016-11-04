@@ -35,7 +35,7 @@ input[type=text] {
   border-left: none;
   border-right: none;
   border-radius: 0;
-  border-bottom: 3px solid #AAAAAA;
+  border-bottom: 3px solid #666666;
   background: none;
   padding-left: 0;
 }
@@ -49,19 +49,19 @@ input[type=text]:focus {
 }
 
 ::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #666666;
   font-size: 1.5rem;
 }
 ::-moz-placeholder {
-  color: #AAAAAA;
+  color: #666666;
   font-size: 1.5rem;
 }
 :-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #666666;
   font-size: 1.5rem;
 }
 :-moz-placeholder {
-  color: #AAAAAA;
+  color: #666666;
   font-size: 1.5rem;
 }
 
