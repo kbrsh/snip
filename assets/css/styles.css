@@ -38,6 +38,10 @@ input[type=text] {
   background: none;
 }
 
+input[type=text]:focus {
+  
+}
+
 #submit {
   width: 100%;
   margin-left: 0;
