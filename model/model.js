@@ -64,7 +64,7 @@ module.exports.visitURL = (id, cb) => {
   });
 }
 
-module.exports.getAll = () => {
+module.exports.getAll = (cb) => {
   var allLinks = [];
 
   url.find({}, (err, data) => {
@@ -80,7 +80,7 @@ module.exports.getAll = () => {
       }
       allLinks.push(apiURL);
     }
+    cb(allLinks);
   });
 
-  return allLinks;
 }
