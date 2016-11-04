@@ -80,7 +80,7 @@ input[type=text]:focus:-moz-placeholder {
 }
 
 button {
-  
+  background: #2CF6B3;
 }
 
 #submit {
