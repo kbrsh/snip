@@ -104,10 +104,12 @@ button {
 }
 
 #shortened-url {
-  max-width: 200px;
+  max-width: 250px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  background: #FFFFFF;
+  padding: 1rem;
 }
 
 #close-modal {
