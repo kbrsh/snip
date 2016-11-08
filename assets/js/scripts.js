@@ -17,7 +17,7 @@ function postReq(url, param, callback) {
   http.open("POST", url, true);
   http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  http.onreadystatechange = function() {//Call a function when the state changes.
+  http.onreadystatechange = function() {
     if(http.readyState == 4 && http.status == 200) {
         callback(JSON.parse(http.responseText));
     }
