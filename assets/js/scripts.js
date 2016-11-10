@@ -40,6 +40,10 @@ function addProtocol(url) {
   return url;
 }
 
+function error() {
+  document.getElementById("error").innerHTML = "That URL is invalid!";
+}
+
 document.getElementById("submit").addEventListener("click", function() {
   var longURL = addProtocol(document.getElementById("url").value);
   if(valid(longURL)) {
@@ -52,7 +56,7 @@ document.getElementById("submit").addEventListener("click", function() {
       document.getElementById("error").innerHTML = "";
     });
   } else {
-    
+
   }
 });
 
