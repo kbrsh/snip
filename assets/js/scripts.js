@@ -52,7 +52,7 @@ document.getElementById("submit").addEventListener("click", function() {
       document.getElementById("error").innerHTML = "";
     });
   } else {
-    document.getElementById("error").innerHTML = "That URL is invalid!";
+    
   }
 });
 
