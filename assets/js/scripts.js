@@ -56,7 +56,7 @@ document.getElementById("submit").addEventListener("click", function() {
       document.getElementById("error").innerHTML = "";
     });
   } else {
-
+    error();
   }
 });
 
