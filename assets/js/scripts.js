@@ -48,6 +48,9 @@ document.getElementById("submit").addEventListener("click", function() {
   var longURL = addProtocol(document.getElementById("url").value);
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
+      if(data.error) {
+        error();
+      }
       var modal = document.getElementById("shortened-modal");
       var shortened_url = document.getElementById("shortened-url");
       modal.style.display = "flex";
