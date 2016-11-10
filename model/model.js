@@ -18,7 +18,6 @@ var urlSchema = new Schema({
 
 var url = mongoose.model('url', urlSchema);
 
-
 module.exports.addURL = (opts, cb) => {
   var randId = random();
   var newURL = new url({
@@ -32,9 +31,6 @@ module.exports.addURL = (opts, cb) => {
 
   newURL.save(function(err) {
     if (err) {
-      module.exports.getURL(randId, function(url) {
-        if(url) module.exports.addURL(opts, cb);
-      });
       throw err;
     }
     log("==> 📝 Made URL: " + randId, "green");
