@@ -20,9 +20,6 @@ var url = mongoose.model('url', urlSchema);
 
 module.exports.addURL = (opts, cb) => {
   var randId = random();
-  module.exports.getURL(randId, function(url) {
-    if(url) module.exports.addURL(opts, cb);
-  });
   var newURL = new url({
     id: randId,
     shortURL: opts.baseURL + "/" + randId,
