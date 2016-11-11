@@ -32,7 +32,7 @@ module.exports.addURL = (opts, cb) => {
 
   newURL.save(function(err) {
     if (err) {
-      throw err;
+      log(err);
     }
     log("==> 📝 Made URL: " + randId, "green");
   });
