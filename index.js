@@ -42,7 +42,6 @@ app.post('/api/new', (req, res) => {
 
 app.get('/:id', (req, res) => {
   var id = req.params.id;
-
   model.getURL(id, (url) => {
     if(url) {
       model.visitURL(id);
@@ -78,6 +77,9 @@ app.get("/api/links", (req, res) => {
   model.getAll((links) => res.send(JSON.stringify(links)));
 });
 
+app.get('*', function(req, res){
+  res.status(404).send('404 Not Found');
+});
 
 // Listen
 app.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1", (req, res) => {
