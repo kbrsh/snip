@@ -24,7 +24,7 @@ Snip has a dead-simple, easy to use API.
     stats: {
         visits: 10
     },
-    shortURL: 'http://snipit.herokuapp.com/Qra7ecH',
+    shortURL: 'http://snipit.ga/Qra7ecH',
     longURL: 'http://thisisareallylongurlifonlyitcouldbeshorter.com'
 }
 ```
