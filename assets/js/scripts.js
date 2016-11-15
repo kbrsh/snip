@@ -6,7 +6,7 @@ function getReq(url, callback) {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
     }
-    xmlHttp.open("GET", url, true); // true for asynchronous
+    xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
 }
 
