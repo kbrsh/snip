@@ -77,10 +77,6 @@ app.get('/:id/api', (req, res) => {
 });
 
 app.get('/:id/stats', (req, res) => {
-  var id = req.params.id;
-  res.header('Content-Type', 'application/json');
-
-
 });
 
 app.get("/api/links", (req, res) => {
