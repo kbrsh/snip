@@ -69,9 +69,18 @@ app.get('/:id/api', (req, res) => {
         createdAt: url.createdAt
       }));
     } else {
-      notFound(req, res);
+      res.send(JSON.stringify({
+        error: "ENOTFOUND: The reqested URL could not be found."
+      }));
     }
   });
+});
+
+app.get('/:id/stats', (req, res) => {
+  var id = req.params.id;
+  res.header('Content-Type', 'application/json');
+
+
 });
 
 app.get("/api/links", (req, res) => {
