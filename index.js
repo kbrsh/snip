@@ -77,6 +77,7 @@ app.get('/:id/api', (req, res) => {
 });
 
 app.get('/:id/stats', (req, res) => {
+  res.sendFile(__dirname + "/views/stats.html");
 });
 
 app.get("/api/links", (req, res) => {
