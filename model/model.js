@@ -13,7 +13,8 @@ var urlSchema = new Schema({
   longURL: String,
   stats: {
     visits: Number
-  }
+  },
+  createdAt: String
 });
 
 var url = mongoose.model('url', urlSchema);
