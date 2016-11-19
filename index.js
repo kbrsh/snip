@@ -29,7 +29,8 @@ app.post('/api/new', (req, res) => {
         longURL: url.longURL,
         stats: {
           visits: url.stats.visits
-        }
+        },
+        createdAt: url.createdAt
       }));
     });
   } else {
@@ -64,7 +65,8 @@ app.get('/:id/api', (req, res) => {
         longURL: url.longURL,
         stats: {
           visits: url.stats.visits
-        }
+        },
+        createdAt: url.createdAt
       }));
     } else {
       notFound(req, res);
