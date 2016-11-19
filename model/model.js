@@ -81,7 +81,8 @@ module.exports.getAll = (cb) => {
         longURL: selectedURL.longURL,
         stats: {
           visits: selectedURL.stats.visits
-        }
+        },
+        createdAt: selectedURL.createdAt
       }
       allLinks.push(apiURL);
     }
