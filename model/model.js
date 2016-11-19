@@ -27,7 +27,8 @@ module.exports.addURL = (opts, cb) => {
     longURL: opts.longURL,
     stats: {
       visits: 0
-    }
+    },
+    createdAt: new Date()
   });
 
 
