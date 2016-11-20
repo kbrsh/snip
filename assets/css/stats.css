@@ -27,6 +27,13 @@ p {
   width: 100%;
 }
 
+.report {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  border: 2px solid #BCBCBC;
+}
+
 /*Utilities*/
 
 .small-container {
