@@ -13,7 +13,7 @@ function extractBaseURL(url) {
 }
 
 function fillData(data) {
-  document.getElementById("report-longURL").innerHTML = data.longURL.;
+  document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
 }
 
 var urlID = window.location.href.split("/")[3];
