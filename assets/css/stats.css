@@ -51,6 +51,11 @@ p {
   font-family: "Montserrat";
 }
 
+.report-visits .report-content {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 /*Utilities*/
 
 .small-container {
