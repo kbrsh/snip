@@ -8,6 +8,16 @@ function getReq(url, callback) {
     xmlHttp.send(null);
 }
 
+function formatNum(num) {
+  if(num > 999) {
+    return (num/1000).toFixed(1) + 'k';
+  } else if(num > 999999) {
+    return (num/1000000).toFixed(1) + 'm';
+  } else {
+    return num;
+  }
+}
+
 function extractBaseURL(url) {
   return url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i)[1];
 }
