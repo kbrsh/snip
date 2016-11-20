@@ -16,6 +16,29 @@ function removeProtocol(url) {
   return url.replace(/^https?\:\/\//gi, "")
 }
 
+function timeSince(timeStamp) {
+    var now = new Date(),
+      secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
+    if(secondsPast < 60){
+    	var secondsCalc = parseInt(secondsPast);
+      return (secondsCalc > 1 ? secondsCalc + ' seconds ago' : secondsCalc + ' second ago');
+    }
+    if(secondsPast < 3600){
+    	var minutesCalc = parseInt(secondsPast/60);
+      return (minutesCalc > 1 ? minutesCalc + ' minutes ago' : minutesCalc + ' minute ago');
+    }
+    if(secondsPast <= 86400){
+    	var hoursCalc = parseInt(secondsPast/3600);
+      return (hoursCalc > 1 ? hoursCalc + ' hours ago' : hoursCalc + ' hour ago');
+    }
+    if(secondsPast > 86400){
+        day = timeStamp.getDate();
+        month = timeStamp.toDateString().match(/ [a-zA-Z]*/)[0].replace(" ","");
+        year = timeStamp.getFullYear() == now.getFullYear() ? "" :  " "+timeStamp.getFullYear();
+        return day + " " + month + year;
+    }
+}
+
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
