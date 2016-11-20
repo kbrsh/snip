@@ -43,7 +43,7 @@ function daysSince(timeStamp) {
   var now = new Date(),
   secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
   var daysSinceOrZero = parseInt(secondsPast / 86400);
-  return ;
+  return daysSinceOrZero > 0 ? daysSinceOrZero : 1;
 }
 
 function fillData(data) {
