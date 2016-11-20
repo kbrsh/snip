@@ -9,8 +9,8 @@ function getReq(url, callback) {
 }
 
 var urlID = window.location.href.split("/")[3];
-
 getReq("/" + urlID + "/api", function(data) {
+  data = JSON.parse(data);
   if(data.error) {
     document.getElementById("report").classList.add("hide");
   }
