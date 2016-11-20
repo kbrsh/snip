@@ -19,7 +19,7 @@ function removeProtocol(url) {
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
-  document.getElementById("report-total-visits").innerHTML
+  document.getElementById("report-total-visits").innerHTML = data.stats.visits;
 }
 
 var urlID = window.location.href.split("/")[3];
