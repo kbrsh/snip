@@ -8,6 +8,10 @@ function getReq(url, callback) {
     xmlHttp.send(null);
 }
 
+function fillData(data) {
+  
+}
+
 var urlID = window.location.href.split("/")[3];
 getReq("/" + urlID + "/api", function(data) {
   data = JSON.parse(data);
