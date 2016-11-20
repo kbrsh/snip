@@ -42,6 +42,8 @@ function timeSince(timeStamp) {
 function daysSince(timeStamp) {
   var now = new Date(),
   secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
+
+  return parseInt(secondsPast / 86400);
 }
 
 function fillData(data) {
@@ -49,6 +51,7 @@ function fillData(data) {
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
   document.getElementById("report-total-visits").innerHTML = data.stats.visits;
   document.getElementById("report-created-at").innerHTML = timeSince(new Date(data.createdAt));
+  
 }
 
 var urlID = window.location.href.split("/")[3];
