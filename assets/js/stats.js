@@ -25,7 +25,7 @@ function extractBaseURL(url) {
 }
 
 function removeWWW(url) {
-  
+  return url.replace("www.", "");
 }
 
 function removeProtocol(url) {
