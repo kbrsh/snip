@@ -14,7 +14,7 @@ function formatNum(num) {
     return fixedK.split(".")[1] !== "0k" ? fixedK : fixedK.split(".")[0] + 'k';
   } else if(num > 999999) {
     var fixedM = (num/1000000).toFixed(1) + 'm';
-    return fixedM
+    return fixedM.split(".")[1] !== "0m" ? fixedK : fixedM.split(".")[0] + 'm';
   } else {
     return num;
   }
