@@ -47,6 +47,8 @@ p {
   text-decoration: none;
   font-family: "Montserrat-Light";
   color: #666666;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .report-subhead {
