@@ -27,6 +27,8 @@ p {
   width: 100%;
 }
 
+/*Report*/
+
 .report {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -43,6 +45,8 @@ p {
 #report-shortURL {
   margin-top: 0;
 }
+
+
 
 /*Utilities*/
 
