@@ -7,3 +7,5 @@ function getReq(url, callback) {
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
 }
+
+var urlID = window.location.href.split("/")[3];
