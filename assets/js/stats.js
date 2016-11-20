@@ -13,5 +13,7 @@ getReq("/" + urlID + "/api", function(data) {
   data = JSON.parse(data);
   if(data.error) {
     document.getElementById("report").classList.add("hide");
+    document.getElementById("header").classList.add("text-center");
+    document.getElementById("header").innerHTML = "404";
   }
 });
