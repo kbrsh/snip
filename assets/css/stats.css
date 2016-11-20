@@ -44,6 +44,9 @@ p {
 
 #report-shortURL {
   margin-top: 0;
+  text-decoration: none;
+  font-family: "Montserrat-Light";
+  color: #666666;
 }
 
 .report-subhead {
