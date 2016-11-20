@@ -39,6 +39,10 @@ function timeSince(timeStamp) {
     }
 }
 
+function daysSince(timeStamp) {
+  
+}
+
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
