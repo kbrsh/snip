@@ -18,6 +18,6 @@ getReq("/" + urlID + "/api", function(data) {
   }
 
   if(!data.error) {
-    
+    fillData(data);
   }
 });
