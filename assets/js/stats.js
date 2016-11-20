@@ -24,6 +24,10 @@ function extractBaseURL(url) {
   return url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i)[1];
 }
 
+function removeWWW(url) {
+  
+}
+
 function removeProtocol(url) {
   return url.replace(/^https?\:\/\//gi, "")
 }
