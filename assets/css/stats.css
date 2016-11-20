@@ -39,14 +39,17 @@ p {
 #report-longURL {
   margin-bottom: 0;
   color: #666666;
-  font-family: "Montserrat-Regular";
+  font-family: "Montserrat";
 }
 
 #report-shortURL {
   margin-top: 0;
 }
 
-
+.report-subhead {
+  color: #666666;
+  font-family: "Montserrat";
+}
 
 /*Utilities*/
 
