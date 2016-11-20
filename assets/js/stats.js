@@ -9,7 +9,7 @@ function getReq(url, callback) {
 }
 
 function extractBaseURL(url) {
-  
+  return url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i)[1];
 }
 
 function fillData(data) {
