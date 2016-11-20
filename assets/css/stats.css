@@ -14,7 +14,8 @@ h1 {
 }
 
 p {
-  color: #333333;
+  color: #666666;
+  font-family: "Montserrat-Light";
   font-size: 2rem;
   margin: 1rem;
   word-wrap: break-word;
