@@ -40,7 +40,8 @@ function timeSince(timeStamp) {
 }
 
 function daysSince(timeStamp) {
-  
+  var now = new Date(),
+  secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
 }
 
 function fillData(data) {
