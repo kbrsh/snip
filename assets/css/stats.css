@@ -46,7 +46,7 @@ p {
   margin-top: 0;
   text-decoration: none;
   font-family: "Montserrat-Light";
-  color: #666666;
+  color: #AAAAAA;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -59,6 +59,7 @@ p {
 
 .report-content {
   font-size: 3.5rem;
+  color: #999999;
 }
 
 .report-visits .report-content {
