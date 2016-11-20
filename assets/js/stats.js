@@ -8,8 +8,12 @@ function getReq(url, callback) {
     xmlHttp.send(null);
 }
 
-function fillData(data) {
+function extractBaseURL(url) {
   
+}
+
+function fillData(data) {
+  document.getElementById("report-longURL").innerHTML = data.longURL.;
 }
 
 var urlID = window.location.href.split("/")[3];
