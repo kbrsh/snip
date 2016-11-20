@@ -16,4 +16,8 @@ getReq("/" + urlID + "/api", function(data) {
     document.getElementById("header").classList.add("text-center");
     document.getElementById("header").innerHTML = "404";
   }
+
+  if(!data.error) {
+    
+  }
 });
