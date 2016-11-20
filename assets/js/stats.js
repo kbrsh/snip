@@ -42,16 +42,16 @@ function timeSince(timeStamp) {
 function daysSince(timeStamp) {
   var now = new Date(),
   secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
-
-  return parseInt(secondsPast / 86400);
+  var daysSinceOrZero = parseInt(secondsPast / 86400);
+  return ;
 }
 
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
   document.getElementById("report-total-visits").innerHTML = data.stats.visits;
+  document.getElementById("report-visits-per-day").innerHTML = daysSince(new Date(data.createdAt));
   document.getElementById("report-created-at").innerHTML = timeSince(new Date(data.createdAt));
-  
 }
 
 var urlID = window.location.href.split("/")[3];
