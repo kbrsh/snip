@@ -66,3 +66,7 @@ p {
   width: 80%;
   max-width: 500px;
 }
+
+.hide {
+  display: none;
+}
