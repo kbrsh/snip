@@ -9,3 +9,7 @@ function getReq(url, callback) {
 }
 
 var urlID = window.location.href.split("/")[3];
+
+getReq("/" + urlID + "/api", function(data) {
+  
+})
