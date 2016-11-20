@@ -43,6 +43,7 @@ function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
   document.getElementById("report-total-visits").innerHTML = data.stats.visits;
+  document.getElementById("report-created-at").innerHTML
 }
 
 var urlID = window.location.href.split("/")[3];
