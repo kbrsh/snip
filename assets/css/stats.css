@@ -17,7 +17,6 @@ p {
   color: #666666;
   font-family: "Montserrat-Light", sans-serif;
   font-size: 2rem;
-  margin: 1rem;
   word-wrap: break-word;
 }
 
@@ -33,6 +32,14 @@ p {
   margin-bottom: 3rem;
   padding: 3rem;
   border: 2px solid #BCBCBC;
+}
+
+#report-longURL {
+  margin-bottom: 0;
+}
+
+#report-shortURL {
+  margin-top: 0;
 }
 
 /*Utilities*/
