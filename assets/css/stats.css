@@ -49,6 +49,7 @@ p {
 .report-subhead {
   color: #666666;
   font-family: "Montserrat";
+  letter-spacing: .01rem;
 }
 
 .report-content {
