@@ -18,7 +18,7 @@ function removeProtocol(url) {
 
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
-  document.getElementById("report-shortURL").innerHTML = ;
+  document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
 }
 
 var urlID = window.location.href.split("/")[3];
