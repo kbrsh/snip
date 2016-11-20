@@ -63,7 +63,7 @@ function daysSince(timeStamp) {
 }
 
 function fillData(data) {
-  document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
+  document.getElementById("report-longURL").innerHTML = removeWWW(extractBaseURL(data.longURL));
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
   document.getElementById("report-shortURL").href = data.shortURL;
   document.getElementById("report-total-visits").innerHTML = formatNum(data.stats.visits);
