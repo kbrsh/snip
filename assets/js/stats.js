@@ -12,8 +12,13 @@ function extractBaseURL(url) {
   return url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i)[1];
 }
 
+function removeProtocol(url) {
+  return url.replace(/^https?\:\/\//gi, "")
+}
+
 function fillData(data) {
   document.getElementById("report-longURL").innerHTML = extractBaseURL(data.longURL);
+  document.getElementById("report-shortURL").innerHTML = ;
 }
 
 var urlID = window.location.href.split("/")[3];
