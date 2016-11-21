@@ -9,12 +9,12 @@ function getReq(url, callback) {
 }
 
 function formatNum(num) {
-  if(num > 999) {
-    var fixedK = (num/1000).toFixed(1) + 'k';
-    return fixedK.split(".")[1] !== "0k" ? fixedK : fixedK.split(".")[0] + 'k';
-  } else if(num > 999999) {
+  if(num > 999999) {
     var fixedM = (num/1000000).toFixed(1) + 'm';
     return fixedM.split(".")[1] !== "0m" ? fixedK : fixedM.split(".")[0] + 'm';
+  } else if(num > 999) {
+    var fixedK = (num/1000).toFixed(1) + 'k';
+    return fixedK.split(".")[1] !== "0k" ? fixedK : fixedK.split(".")[0] + 'k';
   } else {
     return num;
   }
