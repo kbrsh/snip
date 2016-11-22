@@ -68,6 +68,8 @@ app.get('/:id/api', (req, res) => {
         },
         createdAt: url.createdAt
       }));
+
+      log("==> 📈 Getting URL API For: " + id, "green");
     } else {
       res.send(JSON.stringify({
         error: "ENOTFOUND: The reqested URL could not be found."
