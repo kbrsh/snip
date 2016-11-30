@@ -40,7 +40,7 @@ function addProtocol(url) {
   return url;
 }
 
-function error() {
+function error(msg) {
   document.getElementById("error").innerHTML = "That URL is invalid!";
 }
 
