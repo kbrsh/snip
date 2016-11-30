@@ -49,7 +49,7 @@ document.getElementById("submit").addEventListener("click", function() {
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
       if(data.error) {
-        error();
+        error(data.error);
       }
       var modal = document.getElementById("shortened-modal");
       var shortened_url = document.getElementById("shortened-url");
