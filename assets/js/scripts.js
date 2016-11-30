@@ -43,7 +43,7 @@ function addProtocol(url) {
 function error(msg) {
   document.getElementById("error").innerHTML = "That URL is invalid!";
   if(msg) {
-    document.getElementById("error").innerHTML = "Something went wrong. Code: ";
+    document.getElementById("error").innerHTML = "Something went wrong. Code: " + msg.split(":")[0];
   }
 }
 
@@ -51,15 +51,16 @@ document.getElementById("submit").addEventListener("click", function() {
   var longURL = addProtocol(document.getElementById("url").value);
   if(valid(longURL)) {
     postReq("api/new", longURL, function(data) {
-      if(data.error) {
+      if(!data.error) {
+        var modal = document.getElementById("shortened-modal");
+        var shortened_url = document.getElementById("shortened-url");
+        modal.style.display = "flex";
+        shortened_url.value = data.shortURL;
+        document.getElementById("url").value = "";
+        document.getElementById("error").innerHTML = "";
+      } else {
         error(data.error);
       }
-      var modal = document.getElementById("shortened-modal");
-      var shortened_url = document.getElementById("shortened-url");
-      modal.style.display = "flex";
-      shortened_url.value = data.shortURL;
-      document.getElementById("url").value = "";
-      document.getElementById("error").innerHTML = "";
     });
   } else {
     error();
