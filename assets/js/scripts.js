@@ -41,7 +41,10 @@ function addProtocol(url) {
 }
 
 function error(msg) {
-  document.getElementById("error").innerHTML = "That URL is invalid!" + (msg ? " Code: " + msg.split(":")[0] : "");
+  document.getElementById("error").innerHTML = "That URL is invalid!";
+  if(msg) {
+    document.getElementById("error").innerHTML = "Something went wrong. Code: ";
+  }
 }
 
 document.getElementById("submit").addEventListener("click", function() {
