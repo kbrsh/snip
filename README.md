@@ -10,11 +10,11 @@ a dead-simple URL shortener
 
 Head on the website, enter a URL, and click submit (or enter)
 
-<!--### Stats-->
+### Stats
 
-<!--Go on any Snipped URL, and append a `/stats` to the URL. (/Qra7ecH/stats)-->
+Go on any Snipped URL, and append a `/stats` to the URL. (/Qra7ecH/stats)
 
-<!--Now you will be able to see the stats of the website.-->
+Now you will be able to see the stats of the website.
 
 ### API Usage
 
