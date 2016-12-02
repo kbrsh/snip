@@ -80,7 +80,7 @@ app.get('/:id/api', (req, res) => {
 
 app.get('/:id/stats', (req, res) => {
   res.sendFile(__dirname + "/views/stats.html");
-  log("==> 📈 Getting URL Stats For: " + id, "green");
+  log("==> 📈 Getting URL Stats", "green");
 });
 
 app.get("/api/links", (req, res) => {
