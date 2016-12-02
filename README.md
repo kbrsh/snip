@@ -2,6 +2,10 @@
 
 a dead-simple URL shortener
 
+### Status
+
+:zap: - Development (current code is not used in the production version)
+
 ### Usage
 
 Head on the website, enter a URL, and click submit (or enter)
