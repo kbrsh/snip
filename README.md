@@ -21,7 +21,7 @@ Now you will be able to see the stats of the website.
 
 Snip has a dead-simple, easy to use API.
 
-- To get the details of a URL, make a GET request to the url + `/api`, to make it pretty, make it to the url + `/api?pretty=true`, example output:
+<!-- - To get the details of a URL, make a GET request to the url + `/api`, to make it pretty, make it to the url + `/api?pretty=true`, example output:
 
 ```js
 {
@@ -38,7 +38,7 @@ Snip has a dead-simple, easy to use API.
 
 ```js
 [{"id":"erbpgb9","stats":{"visits":1},"shortURL":"http://snipit.ga/erbpgb9","longURL":"http://kabir.ml"},{"id":"72satt9","stats":{"visits":2295},"shortURL":"http://snipit.ga/72satt9","longURL":"http://usewing.ml"}]
-```
+``` -->
 
 ### Bugs/Issues
 
