@@ -16,5 +16,7 @@ function randomLink(cb) {
 }
 
 function seed() {
-  var link = document.getElementById("link");
+  randomLink(function() {
+
+  });
 }
