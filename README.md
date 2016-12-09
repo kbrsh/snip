@@ -4,8 +4,8 @@ a dead-simple URL shortener
 
 ### Status
 
-:zap: - Development (current code is not used in the production version)
-<!-- :rocket: - Production -->
+<!-- :zap: - Development (current code is not used in the production version) -->
+:rocket: - Production
 
 ### Usage
 
