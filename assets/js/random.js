@@ -24,5 +24,6 @@ function randomLink(cb) {
 function seed() {
   randomLink(function(data) {
     link.innerHTML = extractBaseURL(data.longURL).replace(/https?:\/\//gi, "").replace("www.", "");
+    link.href = data.shortURL;
   });
 }
