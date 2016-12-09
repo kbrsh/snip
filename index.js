@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/random", (req, res) => {
+  res.sendFile(__dirname + "/views/random.html");
+});
+
 app.post('/api/new', (req, res) => {
   res.header('Content-Type', 'application/json');
   var newURL = req.body.url;
