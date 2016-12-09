@@ -1,3 +1,5 @@
+var link = document.getElementById("link");
+
 function getReq(url, callback) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
