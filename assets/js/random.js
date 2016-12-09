@@ -16,7 +16,7 @@ function randomLink(cb) {
 }
 
 function seed() {
-  randomLink(function() {
+  randomLink(function(data) {
 
   });
 }
