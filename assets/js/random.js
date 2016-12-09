@@ -7,3 +7,7 @@ function getReq(url, callback) {
     xmlHttp.open("GET", url, true);
     xmlHttp.send(null);
 }
+
+function randomLink(cb) {
+  
+}
