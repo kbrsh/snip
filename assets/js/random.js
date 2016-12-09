@@ -10,6 +10,6 @@ function getReq(url, callback) {
 
 function randomLink(cb) {
   getReq("/api/links", function(data) {
-
+    data = JSON.parse(data);
   });
 }
