@@ -10,6 +10,10 @@ function getReq(url, callback) {
     xmlHttp.send(null);
 }
 
+function extractBaseURL(url) {
+  return url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i)[1];
+}
+
 function randomLink(cb) {
   getReq("/api/links", function(data) {
     data = JSON.parse(data);
@@ -19,6 +23,6 @@ function randomLink(cb) {
 
 function seed() {
   randomLink(function(data) {
-    link.innerHTML = data.longURL.replace(/https?:\/\//gi, "");
+    link.innerHTML = extractBaseURL(data.longURL).replace(/https?:\/\//gi, "").replace("www.", "");
   });
 }
