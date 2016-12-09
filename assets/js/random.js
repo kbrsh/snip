@@ -19,6 +19,6 @@ function randomLink(cb) {
 
 function seed() {
   randomLink(function(data) {
-
+    link.innerHTML = data.longURL.replace(/https?:\/\//gi, "");
   });
 }
