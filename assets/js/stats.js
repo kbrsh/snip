@@ -67,7 +67,7 @@ function fillData(data) {
   document.getElementById("report-shortURL").innerHTML = removeProtocol(data.shortURL);
   document.getElementById("report-shortURL").href = data.shortURL;
   document.getElementById("report-total-visits").innerHTML = formatNum(data.stats.visits);
-  document.getElementById("report-visits-per-day").innerHTML = formatNum(data.stats.visits / daysSince(new Date(data.createdAt)));
+  document.getElementById("report-visits-per-day").innerHTML = formatNum(Math.floor(data.stats.visits / daysSince(new Date(data.createdAt))));
   document.getElementById("report-created-at").innerHTML = timeSince(new Date(data.createdAt));
 }
 
