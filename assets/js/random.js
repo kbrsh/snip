@@ -14,3 +14,7 @@ function randomLink(cb) {
     cb(data[Math.floor(Math.random()*data.length)]);
   });
 }
+
+function seed() {
+  var link = document.getElementById("link");
+}
