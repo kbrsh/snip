@@ -1,7 +1,8 @@
-module.exports = () => {
-    var tempStr = Math.random().toString(36).slice(-7);
-    if(tempStr.length !== 7) {
-        randomStr();
-    }
-    return tempStr;
+module.exports = (len) => {
+  var str = "";
+  for(var i = 0; i < len; i++) {
+    var num = Math.floor(Math.random()*36);
+    str += num < 10 ? num : String.fromCharCode(num + 87);
+  }
+  return str;
 }
