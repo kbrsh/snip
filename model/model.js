@@ -20,7 +20,7 @@ var urlSchema = new Schema({
 var url = mongoose.model('url', urlSchema);
 
 module.exports.addURL = (opts, cb) => {
-  var randId = random();
+  var randId = random(7);
   var newURL = new url({
     id: randId,
     shortURL: opts.baseURL + "/" + randId,
