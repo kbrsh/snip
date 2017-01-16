@@ -19,7 +19,7 @@ Now you will be able to see the stats of the website.
 
 ### API Usage
 
-Snip has a dead-simple, easy to use API. It is currently in alpha, please contact if you would like to use it.
+Snip has a dead-simple, easy to use API. It is currently in alpha, please contact me if you would like to use it.
 
 <!-- - To get the details of a URL, make a GET request to the url + `/api`, to make it pretty, make it to the url + `/api?pretty=true`, example output:
 
