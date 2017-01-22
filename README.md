@@ -21,7 +21,7 @@ Now you will be able to see the stats of the website.
 
 Snip has a dead-simple, easy to use API. It is currently in alpha, please contact me if you would like to use it.
 
-<!-- - To get the details of a URL, make a GET request to the url + `/api`, to make it pretty, make it to the url + `/api?pretty=true`, example output:
+<!-- - To get the details of a URL, make a GET request to the url + `/api`, example output:
 
 ```js
 {
