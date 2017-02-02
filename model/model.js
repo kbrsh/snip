@@ -36,6 +36,7 @@ module.exports.addURL = (opts, cb) => {
     if (err) {
       log("ERR: " + err, "red");
       cb({error: "Something went wrong!"});
+      return;
     }
     log("==> 📝 Made URL: " + randId, "green");
   });
