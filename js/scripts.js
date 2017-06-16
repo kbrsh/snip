@@ -3,8 +3,8 @@
 =============================*/
 
 var Moon = require("moonjs");
-var header = require("./components/header.moon")(Moon);
+require("./components/app.moon")(Moon);
 
-var app = new Moon({
+new Moon({
   el: "#app"
 });
