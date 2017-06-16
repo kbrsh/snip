@@ -1,28 +1,35 @@
 {
   "name": "snip",
-  "version": "0.0.0",
-  "private": "true",
-  "description": "dead simple URL shortener",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Snip",
   "scripts": {
-    "test": "echo No Test Yet",
-    "start": "node index.js"
+    "watch": "./node_modules/.bin/watchify -vd -e js/scripts.js -o dist/js/build.min.js -p browserify-hmr",
+    "serve": "http-server -o -c 1 -a localhost",
+    "bundle-css": "node ./build/bundle-css.js",
+    "watch-css": "node ./build/watch.js",
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel watch serve watch-css bundle-css",
+    "build": "cross-env NODE_ENV=production node build/build.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KingPixil/snip.git"
+  "browserify": {
+    "transform": [
+      "moonify"
+    ]
   },
-  "author": "Kabir Shah",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KingPixil/snip/issues"
-  },
-  "homepage": "https://github.com/KingPixil/snip#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "hexu": "^1.0.0",
-    "mongodb": "^2.2.11",
-    "mongoose": "^4.6.5"
-  }
+    "moonjs": "KingPixil/moon"
+  },
+  "devDependencies": {
+    "browserify": "14.1.0",
+    "browserify-hmr": "0.3.5",
+    "clean-css": "4.0.8",
+    "cross-env": "^4.0.0",
+    "html-minifier": "^3.4.1",
+    "http-server": "0.9.0",
+    "moonify": "0.0.14",
+    "npm-run-all": "^2.3.0",
+    "uglify-js": "latest",
+    "uglifyify": "3.0.4",
+    "watchify": "3.9.0"
+  },
+  "author": "Kabir Shah"
 }
