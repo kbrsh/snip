@@ -7,7 +7,7 @@ a dead-simple URL shortener
 :zap: - Development (current code is not used in the production version)
 <!-- :rocket: - Production -->
 
-Snip is currently being rewritten in Moon, Crystal, and PostgreSQL
+Snip is currently being rewritten in [Moon](http://moonjs.ga), [Crystal](https://crystal-lang.org), and [PostgreSQL](https://postgresql.org).
 
 ### License
 
